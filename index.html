@@ -1,0 +1,4719 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ZTi IMPORT EXPORT | Global Sportswear Manufacturing & OEM/ODM Enterprise
+    </title>
+    <meta
+      name="description"
+      content="Tier-1 Chinese Sportswear OEM & ODM Manufacturer. 65,000m² Smart Plants in Ningbo & Dongguan."
+    />
+
+    <!-- Typography: Cinzel (Display), Syne (Architectural), Plus Jakarta Sans (Body), JetBrains Mono (Telemetry) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- UI, Icons & Animation Stack -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Tailwind Configuration with Exact Emerald Palette -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zti: {
+                c1: "#051F20", // Deepest Obsidian Forest
+                c2: "#0B2B26", // Dark Pine Surface
+                c3: "#163832", // Emerald Card Layer
+                c4: "#235347", // Structural Emerald Border / Accent
+                c5: "#8EB69B", // Metallic Sage Highlight
+                c6: "#DAF1DE", // Crisp Mint Alabaster
+              },
+            },
+            fontFamily: {
+              display: ["Cinzel", "serif"],
+              arch: ["Syne", "sans-serif"],
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      :root {
+        --c1: #051f20;
+        --c2: #0b2b26;
+        --c3: #163832;
+        --c4: #235347;
+        --c5: #8eb69b;
+        --c6: #daf1de;
+      }
+
+      body {
+        background-color: var(--c1);
+        color: var(--c6);
+        font-family: "Plus Jakarta Sans", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Ultra-Glassy Enterprise Surface */
+      .glass-card {
+        background: linear-gradient(
+          135deg,
+          rgba(22, 56, 50, 0.6) 0%,
+          rgba(11, 43, 38, 0.84) 100%
+        );
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(142, 182, 155, 0.3);
+        box-shadow:
+          0 24px 48px rgba(3, 14, 15, 0.75),
+          inset 0 1px 1px rgba(218, 241, 222, 0.22);
+        transition:
+          border-color 0.35s ease,
+          box-shadow 0.35s ease,
+          transform 0.35s ease;
+      }
+
+      .glass-card:hover {
+        border-color: rgba(218, 241, 222, 0.58);
+        box-shadow:
+          0 28px 60px rgba(3, 14, 15, 0.9),
+          0 0 25px rgba(142, 182, 155, 0.2),
+          inset 0 1px 2px rgba(218, 241, 222, 0.35);
+      }
+
+      .glass-modal {
+        background: linear-gradient(
+          145deg,
+          rgba(11, 43, 38, 0.94) 0%,
+          rgba(5, 31, 32, 0.98) 100%
+        );
+        backdrop-filter: blur(28px);
+        border: 1px solid rgba(142, 182, 155, 0.45);
+        box-shadow:
+          0 35px 80px rgba(0, 0, 0, 0.9),
+          0 0 40px rgba(35, 83, 71, 0.5);
+      }
+
+      /* Emerald-Sage Metallic Gradient Text */
+      .emerald-gradient-text {
+        background: linear-gradient(
+          135deg,
+          #daf1de 0%,
+          #8eb69b 55%,
+          #235347 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Google Flow Anamorphic Transition Flash Veil */
+      .flow-flare-swipe {
+        background: linear-gradient(
+          110deg,
+          transparent 15%,
+          rgba(142, 182, 155, 0.45) 45%,
+          rgba(218, 241, 222, 0.85) 50%,
+          rgba(142, 182, 155, 0.45) 55%,
+          transparent 85%
+        );
+        background-size: 250% 100%;
+      }
+
+      /* Animated Shimmer Sweep on Cards & Reports */
+      .shimmer-sweep {
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer-sweep::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -120%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(218, 241, 222, 0.1),
+          transparent
+        );
+        transform: skewX(-25deg);
+        transition: left 0.75s ease;
+        pointer-events: none;
+      }
+      .shimmer-sweep:hover::before {
+        left: 140%;
+      }
+
+      /* 3D Icon Pedestal */
+      .icon-3d {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        background: linear-gradient(
+          135deg,
+          #235347 0%,
+          #163832 55%,
+          #051f20 100%
+        );
+        border: 1px solid rgba(218, 241, 222, 0.32);
+        box-shadow:
+          0 12px 24px rgba(3, 14, 15, 0.8),
+          inset 0 2px 3px rgba(218, 241, 222, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          box-shadow 0.4s ease;
+      }
+      .group:hover .icon-3d {
+        transform: translateY(-5px) rotateX(10deg) rotateY(-10deg) scale(1.07);
+        box-shadow:
+          -6px 16px 28px rgba(3, 14, 15, 0.9),
+          0 0 20px rgba(142, 182, 155, 0.4);
+      }
+
+      /* Primary & Glass Buttons */
+      .btn-mint {
+        background: linear-gradient(135deg, #daf1de 0%, #8eb69b 100%);
+        color: #051f20;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow:
+          0 10px 25px rgba(5, 31, 32, 0.7),
+          inset 0 1px 1px #ffffff;
+      }
+      .btn-mint:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow:
+          0 15px 35px rgba(142, 182, 155, 0.45),
+          inset 0 1px 2px #ffffff;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #daf1de 70%,
+          #8eb69b 100%
+        );
+      }
+
+      .btn-emerald-glass {
+        background: rgba(22, 56, 50, 0.62);
+        border: 1px solid rgba(142, 182, 155, 0.45);
+        color: #daf1de;
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        backdrop-filter: blur(12px);
+        transition: all 0.3s ease;
+      }
+      .btn-emerald-glass:hover {
+        background: rgba(35, 83, 71, 0.85);
+        border-color: #daf1de;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(5, 31, 32, 0.6);
+      }
+
+      /* Infinite Moving Marquee Sliders */
+      @keyframes marqueeLeft {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marqueeLeft 36s linear infinite;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+
+      /* Animated Progress Bar Fill */
+      @keyframes progressPulse {
+        0%,
+        100% {
+          filter: brightness(1);
+        }
+        50% {
+          filter: brightness(1.3);
+        }
+      }
+      .bar-alive {
+        animation: progressPulse 2.5s ease-in-out infinite;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #051f20;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #235347;
+        border-radius: 4px;
+        border: 1px solid #8eb69b;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8eb69b;
+      }
+    </style>
+  </head>
+  <body class="selection:bg-zti-c5 selection:text-zti-c1 antialiased relative">
+    <!-- ================================================================= -->
+    <!-- TOP LIVE TELEMETRY & SESSION STATUS BAR                           -->
+    <!-- ================================================================= -->
+    <div
+      class="bg-[#031415] border-b border-zti-c4/60 text-[11px] py-2 px-6 flex justify-between items-center text-zti-c5 font-mono overflow-x-auto whitespace-nowrap z-50 relative"
+    >
+      <div class="flex items-center space-x-6">
+        <span class="flex items-center text-zti-c6 font-bold">
+          <span class="w-2 h-2 rounded-full bg-zti-c5 mr-2 animate-ping"></span>
+          NINGBO & DONGGUAN SMART PLANTS: 99.7% LIVE UPTIME
+        </span>
+        <span class="text-zti-c4">|</span>
+        <span>ISO 9001:2015 • WRAP PLATINUM • OEKO-TEX 100 • AQL 1.5</span>
+        <span class="text-zti-c4">|</span>
+        <span class="text-zti-c6">USD/CNY: 7.2450</span>
+      </div>
+
+      <div class="flex items-center space-x-4 pl-6">
+        <div
+          class="flex items-center space-x-1.5 bg-zti-c2 px-2.5 py-0.5 rounded border border-zti-c4"
+        >
+          <i class="ph-duotone ph-currency-circle-dollar text-zti-c5"></i>
+          <span>CURRENCY:</span>
+          <select
+            id="currency-selector"
+            onchange="ZTi.setCurrency(this.value)"
+            class="bg-transparent text-zti-c6 font-mono font-bold outline-none cursor-pointer"
+          >
+            <option value="USD" class="bg-zti-c1 text-zti-c6">USD ($)</option>
+            <option value="EUR" class="bg-zti-c1 text-zti-c6">EUR (€)</option>
+            <option value="GBP" class="bg-zti-c1 text-zti-c6">GBP (£)</option>
+            <option value="SAR" class="bg-zti-c1 text-zti-c6">SAR (﷼)</option>
+            <option value="AED" class="bg-zti-c1 text-zti-c6">AED (د.إ)</option>
+            <option value="CNY" class="bg-zti-c1 text-zti-c6">CNY (¥)</option>
+          </select>
+        </div>
+        <span class="hidden md:inline"
+          >BEIJING HQ:
+          <span id="beijing-clock" class="text-zti-c6 font-bold"
+            >--:--:-- CST</span
+          ></span
+        >
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STICKY NAVIGATION WITH BESPOKE ARCHITECTURAL SVG LOGO             -->
+    <!-- ================================================================= -->
+    <header
+      class="sticky top-0 z-40 glass-card !rounded-none border-x-0 border-t-0 border-b border-zti-c4/70"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-22 py-3.5 flex items-center justify-between"
+      >
+        <!-- ARCHITECTURAL VECTOR CREST & WORDMARK -->
+        <div
+          onclick="ZTi.navigate('home')"
+          class="flex items-center space-x-4 cursor-pointer group select-none"
+        >
+          <div class="relative w-13 h-13 flex items-center justify-center">
+            <div
+              class="absolute inset-0 bg-zti-c5/20 rounded-full blur-md group-hover:bg-zti-c5/40 transition duration-500"
+            ></div>
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="relative z-10 transform group-hover:scale-105 transition duration-500"
+            >
+              <defs>
+                <linearGradient
+                  id="ztiGoldGrad"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#DAF1DE" />
+                  <stop offset="50%" stop-color="#8EB69B" />
+                  <stop offset="100%" stop-color="#235347" />
+                </linearGradient>
+                <linearGradient
+                  id="ztiCoreGrad"
+                  x1="100%"
+                  y1="0%"
+                  x2="0%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#163832" />
+                  <stop offset="100%" stop-color="#051F20" />
+                </linearGradient>
+              </defs>
+              <polygon
+                points="32,3 53,11 61,32 53,53 32,61 11,53 3,32 11,11"
+                fill="url(#ztiCoreGrad)"
+                stroke="url(#ztiGoldGrad)"
+                stroke-width="2"
+              />
+              <polygon
+                points="32,9 55,32 32,55 9,32"
+                fill="none"
+                stroke="#8EB69B"
+                stroke-width="0.9"
+                stroke-dasharray="3 2"
+                opacity="0.7"
+              />
+              <path
+                d="M20 21 H44 L23 43 H44"
+                stroke="url(#ztiGoldGrad)"
+                stroke-width="4.2"
+                stroke-linecap="square"
+                stroke-linejoin="miter"
+              />
+              <line
+                x1="17"
+                y1="32"
+                x2="47"
+                y2="32"
+                stroke="#DAF1DE"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+              <circle cx="32" cy="3" r="2" fill="#DAF1DE" />
+              <circle cx="32" cy="61" r="2" fill="#DAF1DE" />
+              <circle cx="3" cy="32" r="2" fill="#DAF1DE" />
+              <circle cx="61" cy="32" r="2" fill="#DAF1DE" />
+            </svg>
+          </div>
+
+          <div class="flex flex-col">
+            <div class="flex items-center space-x-2.5">
+              <span
+                class="font-arch text-2xl font-extrabold tracking-[0.18em] text-zti-c6 group-hover:text-white transition"
+                >ZTi</span
+              >
+              <span class="h-3.5 w-[1.5px] bg-zti-c5/60"></span>
+              <span
+                class="font-mono text-[10px] tracking-[0.28em] text-zti-c5 uppercase font-semibold"
+                >GLOBAL</span
+              >
+            </div>
+            <span
+              class="text-[9px] font-mono tracking-[0.26em] text-zti-c5/80 uppercase mt-0.5"
+              >Import & Export Co., Ltd.</span
+            >
+          </div>
+        </div>
+
+        <!-- Center Public Navigation -->
+        <nav
+          class="hidden xl:flex items-center space-x-7 text-xs font-mono uppercase tracking-wider"
+        >
+          <button
+            onclick="ZTi.navigate('home')"
+            class="nav-btn text-zti-c6 border-b-2 border-zti-c6 pb-1 font-bold transition"
+            data-view="home"
+          >
+            Home
+          </button>
+          <button
+            onclick="ZTi.navigate('about')"
+            class="nav-btn text-zti-c5 hover:text-zti-c6 border-b-2 border-transparent pb-1 transition"
+            data-view="about"
+          >
+            Smart Plants
+          </button>
+          <button
+            onclick="ZTi.navigate('services')"
+            class="nav-btn text-zti-c5 hover:text-zti-c6 border-b-2 border-transparent pb-1 transition"
+            data-view="services"
+          >
+            OEM / ODM
+          </button>
+          <button
+            onclick="ZTi.navigate('products')"
+            class="nav-btn text-zti-c5 hover:text-zti-c6 border-b-2 border-transparent pb-1 transition"
+            data-view="products"
+          >
+            Catalog
+          </button>
+          <button
+            onclick="ZTi.navigate('rfq')"
+            class="nav-btn text-zti-c5 hover:text-zti-c6 border-b-2 border-transparent pb-1 transition"
+            data-view="rfq"
+          >
+            RFQ Tender
+          </button>
+          <button
+            onclick="ZTi.navigate('contact')"
+            class="nav-btn text-zti-c5 hover:text-zti-c6 border-b-2 border-transparent pb-1 transition"
+            data-view="contact"
+          >
+            Contact HQ
+          </button>
+        </nav>
+
+        <!-- Right Role-Based Portal Controls (Strict Auth Enforced) -->
+        <div class="flex items-center space-x-3" id="nav-auth-controls">
+          <button
+            id="btn-open-auth"
+            onclick="ZTi.openAuthModal('login')"
+            class="px-5 py-2.5 rounded-xl btn-mint text-xs flex items-center gap-2"
+          >
+            <i class="ph-bold ph-lock-key-open text-base"></i>
+            <span>Portal Sign In / Register</span>
+          </button>
+
+          <div id="logged-in-toolbar" class="hidden items-center space-x-2.5">
+            <span
+              id="role-badge-pill"
+              class="px-3 py-1.5 rounded-lg bg-zti-c3 border border-zti-c5/50 text-[10px] font-mono text-zti-c6"
+            ></span>
+
+            <button
+              id="btn-client-portal"
+              onclick="ZTi.navigate('portal')"
+              class="px-4 py-2 rounded-xl btn-emerald-glass text-xs flex items-center gap-1.5"
+            >
+              <i class="ph-duotone ph-ship text-base text-zti-c5"></i>
+              <span>Client Portal</span>
+            </button>
+
+            <!-- Strictly hidden for customers, visible only to Owner -->
+            <button
+              id="btn-owner-erp"
+              onclick="ZTi.navigate('admin')"
+              class="hidden px-4 py-2 rounded-xl btn-mint text-xs flex items-center gap-1.5"
+            >
+              <i class="ph-bold ph-sliders-horizontal text-base"></i>
+              <span>Owner Admin ERP</span>
+            </button>
+
+            <button
+              onclick="ZTi.logout()"
+              class="p-2 rounded-xl btn-emerald-glass text-xs text-red-300 hover:border-red-400"
+              title="Sign Out"
+            >
+              <i class="ph-bold ph-sign-out text-base"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================================================================= -->
+    <!-- MAIN VIEWPORT                                                     -->
+    <!-- ================================================================= -->
+    <main id="app-viewport">
+      <!-- =============================================================== -->
+      <!-- VIEW 1: HOME PAGE (SELF-CONTAINED 60FPS 4-STAGE MOVIE ENGINE)   -->
+      <!-- =============================================================== -->
+      <section id="view-home" class="view-pane space-y-24 pb-16">
+        <!-- HERO SECTION WITH UNBREAKABLE 60FPS GOOGLE FLOW 4-STAGE CINEMA -->
+        <div
+          class="relative min-h-[92vh] flex flex-col justify-between px-6 overflow-hidden border-b border-zti-c4"
+        >
+          <!-- =========================================================== -->
+          <!-- LAYER 1: GUARANTEED 60FPS PROCEDURAL & VIDEO HYBRID CINEMA  -->
+          <!-- Renders Ordering -> Stitching -> Packing -> Shipping Live!  -->
+          <!-- =========================================================== -->
+          <div class="absolute inset-0 -z-20 overflow-hidden bg-[#041819]">
+            <!-- Real-Time 60FPS Industrial Cinema Canvas (Always visible, works 100% offline/online) -->
+            <canvas
+              id="flow-cinema-canvas"
+              class="absolute inset-0 w-full h-full object-cover"
+            ></canvas>
+
+            <!-- Optional Custom User MP4 Video Overlay (If user loads a local MP4 file) -->
+            <video
+              id="custom-user-video"
+              autoplay
+              loop
+              muted
+              playsinline
+              class="hidden absolute inset-0 w-full h-full object-cover opacity-75"
+            ></video>
+
+            <!-- Google Flow Anamorphic Lens-Flare Transition Wipe Veil -->
+            <div
+              id="flow-transition-veil"
+              class="absolute inset-0 pointer-events-none opacity-0 flow-flare-swipe backdrop-blur-md transition-opacity duration-500 z-10"
+            ></div>
+
+            <!-- Top-Left Live Cinema Camera Telemetry Overlay (Always visible even in Theater Mode) -->
+            <div
+              class="absolute top-6 left-6 z-20 pointer-events-none flex items-center gap-3 px-4 py-2 rounded-xl bg-[#051F20]/85 border border-zti-c5/40 backdrop-blur-md font-mono text-xs"
+            >
+              <span
+                class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"
+              ></span>
+              <span class="text-zti-c6 font-bold" id="cinema-hud-tag"
+                >REC • GOOGLE FLOW AI LIVE FILM [STAGE 01: ORDERING]</span
+              >
+              <span
+                class="text-zti-c5 hidden sm:inline"
+                id="cinema-hud-timecode"
+                >00:01:14:08 • 60FPS 4K</span
+              >
+            </div>
+          </div>
+
+          <!-- Subtle Gradient Vignette so Foreground Text is Crisp while Video Shines Clearly -->
+          <div
+            id="hero-vignette-overlay"
+            class="absolute inset-0 bg-gradient-to-r from-[#051F20]/85 via-[#051F20]/35 to-transparent -z-10 pointer-events-none transition-opacity duration-500"
+          ></div>
+
+          <!-- Main Hero Foreground Content Grid (Can be toggled off in Theater Mode to watch pure video) -->
+          <div
+            id="hero-foreground-ui"
+            class="max-w-7xl mx-auto w-full pt-16 pb-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10 my-auto transition-opacity duration-500"
+          >
+            <!-- Left Hero Copy -->
+            <div class="lg:col-span-7 space-y-6">
+              <div
+                class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full glass-card border border-zti-c5/50"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-zti-c6 animate-ping"
+                ></span>
+                <span
+                  class="text-xs font-mono uppercase tracking-widest text-zti-c6 font-bold"
+                  id="flow-active-pill"
+                >
+                  LIVE SCENE 01/04 • B2B ORDERING & 3D CLO HOLOGRAM SCAN
+                </span>
+              </div>
+
+              <h1
+                class="font-display text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight leading-[1.06] text-zti-c6 drop-shadow-2xl"
+              >
+                Manufacturing, Excellence, <br />
+                <span class="emerald-gradient-text">Delivered Worldwide.</span>
+              </h1>
+
+              <p
+                class="text-zti-c6/90 text-base sm:text-lg leading-relaxed max-w-2xl drop-shadow"
+                id="flow-scene-subtitle"
+              >
+                Watch our live 4-stage factory motion picture running behind
+                this screen:
+                <strong class="text-zti-c6 underline"
+                  >01. Ordering (3D CAD)</strong
+                >
+                →
+                <strong class="text-zti-c6 underline"
+                  >02. Stitching (CNC & Flatlock)</strong
+                >
+                →
+                <strong class="text-zti-c6 underline"
+                  >03. Packing (AQL 1.5 Scan)</strong
+                >
+                →
+                <strong class="text-zti-c6 underline"
+                  >04. Shipping (Container Vessel)</strong
+                >.
+              </p>
+
+              <!-- Hero CTAs -->
+              <div class="flex flex-wrap items-center gap-3.5 pt-2">
+                <button
+                  onclick="ZTi.navigate('rfq')"
+                  class="px-7 py-4 rounded-xl btn-mint text-xs flex items-center gap-2.5"
+                >
+                  <i class="ph-bold ph-file-arrow-up text-lg"></i>
+                  <span>Start Order / Submit RFQ</span>
+                </button>
+                <button
+                  onclick="ZTi.navigate('products')"
+                  class="px-6 py-4 rounded-xl btn-emerald-glass text-xs flex items-center gap-2.5"
+                >
+                  <i class="ph-duotone ph-t-shirt text-lg text-zti-c5"></i>
+                  <span>Explore Catalog</span>
+                </button>
+                <button
+                  onclick="ZTi.toggleTheaterMode()"
+                  class="px-5 py-4 rounded-xl btn-emerald-glass text-xs flex items-center gap-2 border-zti-c6/60"
+                >
+                  <i class="ph-bold ph-corners-out text-lg text-zti-c6"></i>
+                  <span>Watch Full-Screen Video</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Column: Live Synchronized Stage Telemetry Monitor -->
+            <div
+              class="lg:col-span-5"
+              data-tilt
+              data-tilt-max="6"
+              data-tilt-glare="true"
+              data-tilt-max-glare="0.18"
+            >
+              <div
+                class="glass-card shimmer-sweep rounded-3xl p-7 space-y-5"
+                id="flow-telemetry-card"
+              >
+                <div
+                  class="flex justify-between items-center border-b border-zti-c4 pb-4"
+                >
+                  <div class="flex items-center gap-3.5">
+                    <div class="icon-3d !w-12 !h-12" id="flow-card-icon">
+                      <i
+                        class="ph-duotone ph-compass-tool text-2xl text-zti-c6"
+                      ></i>
+                    </div>
+                    <div>
+                      <div
+                        class="text-[10px] font-mono text-zti-c5 uppercase tracking-widest"
+                        id="flow-card-stage"
+                      >
+                        STAGE 01 • ORDERING & CAD
+                      </div>
+                      <div
+                        class="text-base font-bold text-zti-c6"
+                        id="flow-card-title"
+                      >
+                        B2B Tech Pack & 3D CLO Grading
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    class="px-2.5 py-1 rounded-full bg-zti-c4 text-zti-c6 text-[10px] font-mono font-bold flex items-center gap-1.5"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-zti-c6 animate-ping"
+                    ></span>
+                    LIVE VIDEO
+                  </span>
+                </div>
+
+                <p
+                  class="text-xs text-zti-c5 leading-relaxed font-sans"
+                  id="flow-card-desc"
+                >
+                  International buyers submit custom tech packs, GSM
+                  requirements, and Pantone codes via our encrypted RFQ desk.
+                  Our 18 pattern engineers render 3D CLO physics avatars within
+                  48 hours.
+                </p>
+
+                <!-- Dynamic Scene Telemetry Bars -->
+                <div class="space-y-3 font-mono text-xs">
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="text-zti-c5" id="flow-m1-label"
+                        >3D CLO Pattern Accuracy</span
+                      >
+                      <span class="text-zti-c6 font-bold" id="flow-m1-val"
+                        >99.8% (±0.2mm)</span
+                      >
+                    </div>
+                    <div
+                      class="w-full h-2 bg-zti-c1 rounded-full overflow-hidden p-0.5 border border-zti-c4"
+                    >
+                      <div
+                        id="flow-m1-bar"
+                        class="h-full bg-gradient-to-r from-zti-c4 via-zti-c5 to-zti-c6 rounded-full w-[99%] bar-alive transition-all duration-700"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="text-zti-c5" id="flow-m2-label"
+                        >BOM Costing & Lab Dip Turnaround</span
+                      >
+                      <span class="text-zti-c6 font-bold" id="flow-m2-val"
+                        >24 Hours</span
+                      >
+                    </div>
+                    <div
+                      class="w-full h-2 bg-zti-c1 rounded-full overflow-hidden p-0.5 border border-zti-c4"
+                    >
+                      <div
+                        id="flow-m2-bar"
+                        class="h-full bg-gradient-to-r from-zti-c4 via-zti-c5 to-zti-c6 rounded-full w-[95%] bar-alive transition-all duration-700"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 pt-1 text-center font-mono">
+                  <div class="p-3 rounded-xl bg-zti-c1/80 border border-zti-c4">
+                    <div class="text-sm font-bold text-zti-c6" id="flow-stat-1">
+                      300 Pcs
+                    </div>
+                    <div
+                      class="text-[9px] text-zti-c5 uppercase"
+                      id="flow-stat-1-lbl"
+                    >
+                      Min MOQ
+                    </div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-zti-c1/80 border border-zti-c4">
+                    <div class="text-sm font-bold text-zti-c6" id="flow-stat-2">
+                      Delta E &lt; 0.4
+                    </div>
+                    <div
+                      class="text-[9px] text-zti-c5 uppercase"
+                      id="flow-stat-2-lbl"
+                    >
+                      Color Match
+                    </div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-zti-c1/80 border border-zti-c4">
+                    <div class="text-sm font-bold text-zti-c6" id="flow-stat-3">
+                      AQL 1.5
+                    </div>
+                    <div
+                      class="text-[9px] text-zti-c5 uppercase"
+                      id="flow-stat-3-lbl"
+                    >
+                      SGS Standard
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- GOOGLE FLOW 4-STAGE CINEMATIC STORYBOARD TIMELINE CONTROLLER  -->
+          <!-- (01. ORDERING -> 02. STITCHING -> 03. PACKING -> 04. SHIPPING)-->
+          <!-- ============================================================= -->
+          <div class="max-w-7xl mx-auto w-full pb-8 relative z-20">
+            <div class="glass-card rounded-2xl p-4 border border-zti-c5/50">
+              <div
+                class="flex flex-wrap justify-between items-center gap-2 mb-3 px-1"
+              >
+                <div
+                  class="flex items-center gap-2 font-mono text-[11px] text-zti-c6"
+                >
+                  <i class="ph-fill ph-film-strip text-zti-c5 text-base"></i>
+                  <span class="uppercase tracking-widest font-bold"
+                    >Google Flow 4-Stage Video Sequencer</span
+                  >
+                  <span class="hidden lg:inline text-zti-c5"
+                    >— Auto-Morphs Every 7 Seconds (Or Click Any Stage
+                    Below)</span
+                  >
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <!-- Toggle Theater Mode (Hides text so user can watch the pure animated movie) -->
+                  <button
+                    onclick="ZTi.toggleTheaterMode()"
+                    id="btn-theater-toggle"
+                    class="px-3 py-1 rounded-lg bg-zti-c3 border border-zti-c5 text-[10px] font-mono text-zti-c6 hover:bg-zti-c4 flex items-center gap-1.5"
+                  >
+                    <i class="ph-bold ph-eye"></i>
+                    <span id="label-theater-mode">Cinema Only Mode: OFF</span>
+                  </button>
+                  <!-- Upload Custom Local MP4 File if Desired -->
+                  <input
+                    type="file"
+                    id="custom-mp4-input"
+                    accept="video/mp4,video/webm"
+                    class="hidden"
+                    onchange="ZTi.loadUserMp4(this)"
+                  />
+                  <button
+                    onclick="
+                      document.getElementById('custom-mp4-input').click()
+                    "
+                    class="px-3 py-1 rounded-lg bg-zti-c1 border border-zti-c4 text-[10px] font-mono text-zti-c5 hover:text-zti-c6 flex items-center gap-1.5"
+                  >
+                    <i class="ph-bold ph-upload-simple"></i>
+                    <span>Load Local .MP4</span>
+                  </button>
+                  <!-- Pause / Resume Auto-Transition -->
+                  <button
+                    onclick="ZTi.toggleFlowAutoplay()"
+                    id="btn-flow-pause"
+                    class="px-3 py-1 rounded-lg bg-zti-c1 border border-zti-c4 text-[10px] font-mono text-zti-c6 hover:border-zti-c6 flex items-center gap-1.5"
+                  >
+                    <i class="ph-fill ph-pause" id="icon-flow-pause"></i>
+                    <span id="label-flow-pause">Auto-Transition: ON</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 4 Interactive Stage Timeline Cards -->
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 font-mono"
+              >
+                <!-- Stage 01: Ordering -->
+                <button
+                  onclick="ZTi.transitionToFlowStage(0, true)"
+                  class="flow-stage-card text-left p-3.5 rounded-xl bg-zti-c3/90 border-2 border-zti-c6 transition relative overflow-hidden group"
+                  data-stage="0"
+                >
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-[10px] text-zti-c5 font-bold uppercase"
+                      >01 • ORDERING</span
+                    >
+                    <i
+                      class="ph-duotone ph-compass-tool text-lg text-zti-c6"
+                    ></i>
+                  </div>
+                  <div class="text-xs font-bold text-zti-c6">
+                    3D CLO CAD & RFQ Spec
+                  </div>
+                  <div class="text-[10px] text-zti-c5 mt-0.5 truncate">
+                    Live Hologram Laser Grading
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-zti-c1 rounded-full mt-2.5 overflow-hidden"
+                  >
+                    <div id="flow-prog-0" class="h-full bg-zti-c6 w-0"></div>
+                  </div>
+                </button>
+
+                <!-- Stage 02: Stitching -->
+                <button
+                  onclick="ZTi.transitionToFlowStage(1, true)"
+                  class="flow-stage-card text-left p-3.5 rounded-xl bg-zti-c1/75 border border-zti-c4 hover:border-zti-c5 transition relative overflow-hidden group"
+                  data-stage="1"
+                >
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-[10px] text-zti-c5 font-bold uppercase"
+                      >02 • STITCHING</span
+                    >
+                    <i
+                      class="ph-duotone ph-scissors text-lg text-zti-c5 group-hover:text-zti-c6"
+                    ></i>
+                  </div>
+                  <div class="text-xs font-bold text-zti-c6">
+                    CNC Laser & Flatlock Sewing
+                  </div>
+                  <div class="text-[10px] text-zti-c5 mt-0.5 truncate">
+                    High-Speed Needle & Laser Cut
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-zti-c1 rounded-full mt-2.5 overflow-hidden"
+                  >
+                    <div id="flow-prog-1" class="h-full bg-zti-c6 w-0"></div>
+                  </div>
+                </button>
+
+                <!-- Stage 03: Packing -->
+                <button
+                  onclick="ZTi.transitionToFlowStage(2, true)"
+                  class="flow-stage-card text-left p-3.5 rounded-xl bg-zti-c1/75 border border-zti-c4 hover:border-zti-c5 transition relative overflow-hidden group"
+                  data-stage="2"
+                >
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-[10px] text-zti-c5 font-bold uppercase"
+                      >03 • PACKING</span
+                    >
+                    <i
+                      class="ph-duotone ph-package text-lg text-zti-c5 group-hover:text-zti-c6"
+                    ></i>
+                  </div>
+                  <div class="text-xs font-bold text-zti-c6">
+                    AQL 1.5 Scan & Polybagging
+                  </div>
+                  <div class="text-[10px] text-zti-c5 mt-0.5 truncate">
+                    Conveyor Barcode & Metal Gate
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-zti-c1 rounded-full mt-2.5 overflow-hidden"
+                  >
+                    <div id="flow-prog-2" class="h-full bg-zti-c6 w-0"></div>
+                  </div>
+                </button>
+
+                <!-- Stage 04: Shipping -->
+                <button
+                  onclick="ZTi.transitionToFlowStage(3, true)"
+                  class="flow-stage-card text-left p-3.5 rounded-xl bg-zti-c1/75 border border-zti-c4 hover:border-zti-c5 transition relative overflow-hidden group"
+                  data-stage="3"
+                >
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-[10px] text-zti-c5 font-bold uppercase"
+                      >04 • SHIPPING</span
+                    >
+                    <i
+                      class="ph-duotone ph-boat text-lg text-zti-c5 group-hover:text-zti-c6"
+                    ></i>
+                  </div>
+                  <div class="text-xs font-bold text-zti-c6">
+                    Ningbo Port & Vessel Freight
+                  </div>
+                  <div class="text-[10px] text-zti-c5 mt-0.5 truncate">
+                    Gantry Crane & COSCO 40HQ Ship
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-zti-c1 rounded-full mt-2.5 overflow-hidden"
+                  >
+                    <div id="flow-prog-3" class="h-full bg-zti-c6 w-0"></div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INFINITE MOVING MARQUEE SLIDER -->
+        <div class="border-y border-zti-c4 bg-zti-c2/60 py-4 overflow-hidden">
+          <div
+            class="marquee-track flex items-center space-x-12 font-mono text-xs uppercase tracking-widest text-zti-c5"
+          >
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-seal-check text-xl text-zti-c6"></i
+              ><span>ISO 9001:2015 QUALITY MANAGEMENT</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-shield-check text-xl text-zti-c6"></i
+              ><span>WRAP PLATINUM SOCIAL COMPLIANCE</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-leaf text-xl text-zti-c6"></i
+              ><span>OEKO-TEX® STANDARD 100 CERTIFIED</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-recycle text-xl text-zti-c6"></i
+              ><span>GRS RECYCLED POLYESTER MILL</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-boat text-xl text-zti-c6"></i
+              ><span>DIRECT FOB NINGBO & DDP GLOBAL FREIGHT</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-seal-check text-xl text-zti-c6"></i
+              ><span>ISO 9001:2015 QUALITY MANAGEMENT</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-shield-check text-xl text-zti-c6"></i
+              ><span>WRAP PLATINUM SOCIAL COMPLIANCE</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-leaf text-xl text-zti-c6"></i
+              ><span>OEKO-TEX® STANDARD 100 CERTIFIED</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-recycle text-xl text-zti-c6"></i
+              ><span>GRS RECYCLED POLYESTER MILL</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="ph-duotone ph-boat text-xl text-zti-c6"></i
+              ><span>DIRECT FOB NINGBO & DDP GLOBAL FREIGHT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANIMATED KPI COUNTERS -->
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div
+              class="glass-card shimmer-sweep p-6 rounded-2xl group"
+              data-tilt
+              data-tilt-max="8"
+            >
+              <div class="icon-3d mb-4">
+                <i
+                  class="ph-duotone ph-calendar-check text-2xl text-zti-c6"
+                ></i>
+              </div>
+              <div
+                class="text-3xl font-display font-black text-zti-c6 counter-num"
+                data-target="24"
+                data-suffix="+ Yrs"
+              >
+                24+ Yrs
+              </div>
+              <div class="text-xs font-mono text-zti-c5 uppercase mt-1">
+                Export Experience
+              </div>
+            </div>
+            <div
+              class="glass-card shimmer-sweep p-6 rounded-2xl group"
+              data-tilt
+              data-tilt-max="8"
+            >
+              <div class="icon-3d mb-4">
+                <i class="ph-duotone ph-users-three text-2xl text-zti-c6"></i>
+              </div>
+              <div
+                class="text-3xl font-display font-black text-zti-c6 counter-num"
+                data-target="340"
+                data-suffix="+"
+              >
+                340+
+              </div>
+              <div class="text-xs font-mono text-zti-c5 uppercase mt-1">
+                Global Brand Partners
+              </div>
+            </div>
+            <div
+              class="glass-card shimmer-sweep p-6 rounded-2xl group"
+              data-tilt
+              data-tilt-max="8"
+            >
+              <div class="icon-3d mb-4">
+                <i
+                  class="ph-duotone ph-globe-hemisphere-east text-2xl text-zti-c6"
+                ></i>
+              </div>
+              <div
+                class="text-3xl font-display font-black text-zti-c6 counter-num"
+                data-target="48"
+                data-suffix=" Nations"
+              >
+                48 Nations
+              </div>
+              <div class="text-xs font-mono text-zti-c5 uppercase mt-1">
+                Countries Served
+              </div>
+            </div>
+            <div
+              class="glass-card shimmer-sweep p-6 rounded-2xl group"
+              data-tilt
+              data-tilt-max="8"
+            >
+              <div class="icon-3d mb-4">
+                <i class="ph-duotone ph-t-shirt text-2xl text-zti-c6"></i>
+              </div>
+              <div
+                class="text-3xl font-display font-black text-zti-c6 counter-num"
+                data-target="22"
+                data-suffix="M+ Pcs"
+              >
+                22M+ Pcs
+              </div>
+              <div class="text-xs font-mono text-zti-c5 uppercase mt-1">
+                Annual Garment Output
+              </div>
+            </div>
+            <div
+              class="glass-card shimmer-sweep p-6 rounded-2xl group"
+              data-tilt
+              data-tilt-max="8"
+            >
+              <div class="icon-3d mb-4">
+                <i class="ph-duotone ph-anchor text-2xl text-zti-c6"></i>
+              </div>
+              <div
+                class="text-3xl font-display font-black text-zti-c6 counter-num"
+                data-target="1450"
+                data-suffix="+ TEU"
+              >
+                1,450+ TEU
+              </div>
+              <div class="text-xs font-mono text-zti-c5 uppercase mt-1">
+                Containers Shipped
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOVING PRODUCT SHOWCASE SLIDER -->
+        <div class="max-w-7xl mx-auto px-6 space-y-8">
+          <div
+            class="flex flex-col sm:flex-row justify-between sm:items-end gap-4"
+          >
+            <div>
+              <span
+                class="text-xs font-mono text-zti-c5 uppercase tracking-widest"
+                >Flagship Export Silhouettes</span
+              >
+              <h2 class="text-3xl font-display font-bold text-zti-c6 mt-1">
+                Interactive Sportswear Showcase
+              </h2>
+            </div>
+            <div class="flex items-center gap-3">
+              <button
+                onclick="ZTi.slideShowcase(-1)"
+                class="w-11 h-11 rounded-xl btn-emerald-glass flex items-center justify-center"
+              >
+                <i class="ph-bold ph-caret-left"></i>
+              </button>
+              <button
+                onclick="ZTi.slideShowcase(1)"
+                class="w-11 h-11 rounded-xl btn-emerald-glass flex items-center justify-center"
+              >
+                <i class="ph-bold ph-caret-right"></i>
+              </button>
+              <button
+                onclick="ZTi.navigate('products')"
+                class="px-5 py-2.5 rounded-xl btn-mint text-xs"
+              >
+                Full Catalog →
+              </button>
+            </div>
+          </div>
+          <div
+            id="home-showcase-slider"
+            class="flex gap-7 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 scroll-smooth"
+          ></div>
+        </div>
+
+        <!-- LIVE FOB UNIT COST & CONTAINER VOLUME CALCULATOR -->
+        <div class="max-w-5xl mx-auto px-6">
+          <div class="glass-card rounded-3xl p-8 md:p-12 space-y-8">
+            <div class="text-center space-y-2">
+              <span
+                class="text-xs font-mono text-zti-c5 uppercase tracking-widest"
+                >Instant Commercial Costing Engine</span
+              >
+              <h2
+                class="text-2xl sm:text-3xl font-display font-bold text-zti-c6"
+              >
+                Live FOB & Container CBM Calculator
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-5 font-mono text-xs">
+                <div>
+                  <label class="block text-zti-c5 uppercase mb-2"
+                    >1. Select Garment Silhouette</label
+                  >
+                  <select
+                    id="calc-category"
+                    onchange="ZTi.calculateCost()"
+                    class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none focus:border-zti-c6"
+                  >
+                    <option value="tee">
+                      AeroVent Dry-Fit Performance Tee (160 GSM)
+                    </option>
+                    <option value="compression">
+                      Santoni Seamless Sculpt Legging (320 GSM)
+                    </option>
+                    <option value="hoodie">
+                      Heavyweight Loopback Fleece Hoodie (450 GSM)
+                    </option>
+                    <option value="tracksuit">
+                      Pro Club Custom Sublimated Tracksuit Set
+                    </option>
+                  </select>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-zti-c5 uppercase"
+                      >2. Order Volume (Pieces)</span
+                    >
+                    <span
+                      id="calc-qty-display"
+                      class="text-zti-c6 font-bold text-sm"
+                      >2,500 PCS</span
+                    >
+                  </div>
+                  <input
+                    id="calc-qty-slider"
+                    type="range"
+                    min="500"
+                    max="25000"
+                    step="500"
+                    value="2500"
+                    oninput="ZTi.calculateCost()"
+                    class="w-full accent-zti-c5 cursor-pointer"
+                  />
+                </div>
+                <div>
+                  <label class="block text-zti-c5 uppercase mb-2"
+                    >3. Incoterm Delivery Terms</label
+                  >
+                  <select
+                    id="calc-incoterm"
+                    onchange="ZTi.calculateCost()"
+                    class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none focus:border-zti-c6"
+                  >
+                    <option value="fob">FOB Ningbo / Shanghai Port</option>
+                    <option value="cif">CIF Destination Port</option>
+                    <option value="ddp">
+                      DDP (Delivered Duty Paid to Warehouse Door)
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div
+                class="bg-zti-c1/90 p-7 rounded-2xl border border-zti-c4 flex flex-col justify-between space-y-5 font-mono"
+              >
+                <div class="space-y-4 text-xs">
+                  <div
+                    class="text-[10px] text-zti-c5 uppercase tracking-widest border-b border-zti-c4 pb-2"
+                  >
+                    Real-Time BOM Output
+                  </div>
+                  <div class="flex justify-between items-baseline">
+                    <span class="text-zti-c5">Estimated Unit FOB:</span>
+                    <span
+                      id="calc-res-unit"
+                      class="text-2xl font-black text-zti-c6"
+                      >$4.18</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-baseline">
+                    <span class="text-zti-c5">Total Production Contract:</span>
+                    <span
+                      id="calc-res-total"
+                      class="text-lg font-bold text-zti-c5"
+                      >$10,450.00</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-zti-c5">Shipping Cubic Volume:</span>
+                    <span id="calc-res-cbm" class="text-zti-c6"
+                      >4.8 CBM (20GP LCL/FCL)</span
+                    >
+                  </div>
+                </div>
+                <button
+                  onclick="ZTi.navigate('rfq')"
+                  class="w-full py-4 rounded-xl btn-mint text-xs"
+                >
+                  Lock Price in Official RFQ Tender →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 2: SMART PLANTS & ABOUT US                                 -->
+      <!-- =============================================================== -->
+      <section
+        id="view-about"
+        class="view-pane hidden max-w-7xl mx-auto px-6 py-16 space-y-14"
+      >
+        <div class="text-center space-y-3 max-w-3xl mx-auto">
+          <span class="text-xs font-mono text-zti-c5 uppercase tracking-widest"
+            >24 Years of Industrial Apparel Engineering</span
+          >
+          <h1 class="text-4xl sm:text-5xl font-display font-bold text-zti-c6">
+            Inside ZTi's Smart Factories
+          </h1>
+          <p class="text-sm text-zti-c5">
+            65,000 m² integrated knitting, reactive dyeing, laser cutting, and
+            garment assembly across Ningbo and Dongguan.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="glass-card shimmer-sweep p-8 rounded-2xl space-y-4 group">
+            <div class="icon-3d">
+              <i class="ph-duotone ph-factory text-2xl text-zti-c6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-zti-c6">
+              Ningbo & Dongguan Plants
+            </h3>
+            <p class="text-xs text-zti-c5 leading-relaxed">
+              14 high-speed assembly lines, 60 Italian Santoni seamless
+              machines, and automated Gerber laser cutters producing 1.8M+
+              pieces monthly.
+            </p>
+          </div>
+          <div class="glass-card shimmer-sweep p-8 rounded-2xl space-y-4 group">
+            <div class="icon-3d">
+              <i
+                class="ph-duotone ph-drop-half-bottom text-2xl text-zti-c6"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold text-zti-c6">
+              Zero-Discharge Dye House
+            </h3>
+            <p class="text-xs text-zti-c5 leading-relaxed">
+              Spectrophotometer color matching (Delta E &lt; 0.4) with OEKO-TEX®
+              Standard 100 certified non-toxic reactive inks and 92% water
+              recycling.
+            </p>
+          </div>
+          <div class="glass-card shimmer-sweep p-8 rounded-2xl space-y-4 group">
+            <div class="icon-3d">
+              <i class="ph-duotone ph-seal-check text-2xl text-zti-c6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-zti-c6">AQL 1.5 SGS Audited</h3>
+            <p class="text-xs text-zti-c5 leading-relaxed">
+              Every carton undergoes conveyor metal needle scanning, Martindale
+              abrasion testing, and 5-cycle wash shrinkage verification.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 3: OEM / ODM SERVICES                                      -->
+      <!-- =============================================================== -->
+      <section
+        id="view-services"
+        class="view-pane hidden max-w-7xl mx-auto px-6 py-16 space-y-12"
+      >
+        <div class="text-center space-y-3 max-w-2xl mx-auto">
+          <span class="text-xs font-mono text-zti-c5 uppercase tracking-widest"
+            >End-to-End Apparel Production</span
+          >
+          <h1 class="text-4xl font-display font-bold text-zti-c6">
+            OEM, ODM & Private Label Solutions
+          </h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div class="glass-card shimmer-sweep p-7 rounded-2xl group space-y-4">
+            <div class="icon-3d">
+              <i class="ph-duotone ph-scissors text-2xl text-zti-c6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-zti-c6">Full OEM Cut & Sew</h3>
+            <p class="text-xs text-zti-c5 leading-relaxed">
+              Bespoke pattern grading from your tech packs, custom GSM knitting,
+              4-needle 6-thread flatlock seams, and laser-bonded hems.
+            </p>
+          </div>
+          <div class="glass-card shimmer-sweep p-7 rounded-2xl group space-y-4">
+            <div class="icon-3d">
+              <i class="ph-duotone ph-cube-focus text-2xl text-zti-c6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-zti-c6">
+              3D CLO Virtual Sampling
+            </h3>
+            <p class="text-xs text-zti-c5 leading-relaxed">
+              Interactive 3D garment physics rendering in 48 hours, eliminating
+              costly physical sample revisions prior to bulk production.
+            </p>
+          </div>
+          <div class="glass-card shimmer-sweep p-7 rounded-2xl group space-y-4">
+            <div class="icon-3d">
+              <i class="ph-duotone ph-tag text-2xl text-zti-c6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-zti-c6">
+              Private Label & 3PL Packaging
+            </h3>
+            <p class="text-xs text-zti-c5 leading-relaxed">
+              3D silicone heat transfers, woven damask labels, engraved aglets,
+              RFID hangtags, and Amazon/3PL barcoded matte polybags.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 4: TECHNICAL CATALOG                                       -->
+      <!-- =============================================================== -->
+      <section
+        id="view-products"
+        class="view-pane hidden max-w-7xl mx-auto px-6 py-16 space-y-10"
+      >
+        <div
+          class="flex flex-col md:flex-row justify-between md:items-end border-b border-zti-c4 pb-6 gap-4"
+        >
+          <div>
+            <span
+              class="text-xs font-mono text-zti-c5 uppercase tracking-widest"
+              >Wholesale & OEM Catalog</span
+            >
+            <h1
+              class="text-3xl sm:text-4xl font-display font-bold text-zti-c6 mt-1"
+            >
+              Technical Sportswear Lines
+            </h1>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <input
+              id="catalog-search"
+              type="text"
+              oninput="ZTi.filterCatalog()"
+              placeholder="Search GSM, fabric, SKU..."
+              class="bg-zti-c1 border border-zti-c4 rounded-xl px-4 py-2 text-xs font-mono text-zti-c6 outline-none focus:border-zti-c6 w-60"
+            />
+            <select
+              id="catalog-category-filter"
+              onchange="ZTi.filterCatalog()"
+              class="bg-zti-c1 border border-zti-c4 rounded-xl px-4 py-2 text-xs font-mono text-zti-c6 outline-none focus:border-zti-c6"
+            >
+              <option value="all">All Categories</option>
+              <option value="t-shirts">Dry-Fit T-Shirts</option>
+              <option value="compression">Seamless Compression</option>
+              <option value="hoodies">Heavyweight Hoodies & Tracksuits</option>
+              <option value="jerseys">Custom Team Uniforms</option>
+            </select>
+          </div>
+        </div>
+        <div
+          id="catalog-grid"
+          class="grid grid-cols-1 md:grid-cols-3 gap-8"
+        ></div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 5: RFQ TENDER SYSTEM                                       -->
+      <!-- =============================================================== -->
+      <section
+        id="view-rfq"
+        class="view-pane hidden max-w-4xl mx-auto px-6 py-16"
+      >
+        <div class="text-center space-y-3 mb-10">
+          <span class="text-xs font-mono text-zti-c5 uppercase tracking-widest"
+            >Direct Factory Engineering Desk</span
+          >
+          <h1 class="text-3xl sm:text-4xl font-display font-bold text-zti-c6">
+            Request For Quotation (RFQ)
+          </h1>
+        </div>
+        <div class="glass-card rounded-3xl p-8 md:p-10">
+          <form
+            onsubmit="ZTi.submitTender(event)"
+            class="space-y-6 font-mono text-xs"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-zti-c5 uppercase mb-2"
+                  >Company / Brand Name *</label
+                >
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Apex Athletics LLC"
+                  class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none focus:border-zti-c6"
+                />
+              </div>
+              <div>
+                <label class="block text-zti-c5 uppercase mb-2"
+                  >Corporate Email *</label
+                >
+                <input
+                  type="email"
+                  required
+                  placeholder="sourcing@brand.com"
+                  class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none focus:border-zti-c6"
+                />
+              </div>
+              <div>
+                <label class="block text-zti-c5 uppercase mb-2"
+                  >Product Category *</label
+                >
+                <select
+                  class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none focus:border-zti-c6"
+                >
+                  <option>Performance Dry-Fit T-Shirts</option>
+                  <option>Santoni Seamless Compression</option>
+                  <option>450 GSM Loopback Hoodies</option>
+                  <option>Custom Sublimated Teamwear</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-zti-c5 uppercase mb-2"
+                  >Order Quantity (Pcs) *</label
+                >
+                <input
+                  type="number"
+                  min="300"
+                  required
+                  placeholder="Minimum 300 pcs"
+                  class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none focus:border-zti-c6"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-zti-c5 uppercase mb-2"
+                >Fabric GSM, Composition & Custom Branding Notes</label
+              >
+              <textarea
+                rows="4"
+                placeholder="Specify GSM weight, fabric blend, Pantone codes, and packaging..."
+                class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none focus:border-zti-c6"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-4 rounded-xl btn-mint text-xs"
+            >
+              Submit Official RFQ Tender →
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 6: CONTACT HQ                                              -->
+      <!-- =============================================================== -->
+      <section
+        id="view-contact"
+        class="view-pane hidden max-w-6xl mx-auto px-6 py-16 space-y-12"
+      >
+        <div class="text-center space-y-3">
+          <span class="text-xs font-mono text-zti-c5 uppercase tracking-widest"
+            >Direct Factory Communication</span
+          >
+          <h1 class="text-4xl font-display font-bold text-zti-c6">
+            China Headquarters & Global Desks
+          </h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-mono text-xs">
+          <div class="glass-card p-8 rounded-3xl space-y-4">
+            <div class="text-zti-c5 uppercase font-bold">
+              Ningbo Corporate HQ & Port Desk
+            </div>
+            <div class="text-base font-bold text-zti-c6">
+              ZTi Industrial Tower, Ningbo Free Trade Zone, Zhejiang, China
+            </div>
+            <div class="text-zti-c5">
+              Tel: +86 (574) 8829-0199 • Email: sourcing@ztiexport.com
+            </div>
+            <div
+              class="pt-4 border-t border-zti-c4 text-zti-c5 uppercase font-bold"
+            >
+              Dongguan Smart Garment Campus
+            </div>
+            <div class="text-base font-bold text-zti-c6">
+              Humen Town Manufacturing Park, Dongguan, Guangdong, China
+            </div>
+            <div class="text-zti-c5">WhatsApp VIP Desk: +86 188 5742 9901</div>
+          </div>
+          <div class="glass-card p-8 rounded-3xl space-y-4">
+            <h3 class="text-lg font-display font-bold text-zti-c6">
+              Dispatch Direct Message
+            </h3>
+            <form
+              onsubmit="
+                event.preventDefault();
+                ZTi.toast('Message transmitted to Ningbo HQ.');
+              "
+              class="space-y-4"
+            >
+              <input
+                type="text"
+                required
+                placeholder="Your Name & Company"
+                class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none"
+              />
+              <input
+                type="email"
+                required
+                placeholder="Corporate Email"
+                class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none"
+              />
+              <textarea
+                rows="3"
+                required
+                placeholder="Inquiry details..."
+                class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3.5 text-zti-c6 outline-none"
+              ></textarea>
+              <button
+                type="submit"
+                class="w-full py-4 rounded-xl btn-mint text-xs"
+              >
+                Send to Export Desk
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 7: AUTHENTICATED CLIENT B2B PORTAL (GLASSY + ANIMATED)     -->
+      <!-- =============================================================== -->
+      <section
+        id="view-portal"
+        class="view-pane hidden max-w-7xl mx-auto px-6 py-12 space-y-8"
+      >
+        <div
+          class="glass-card p-6 rounded-3xl flex flex-col md:flex-row justify-between md:items-center gap-4 portal-anim-item"
+        >
+          <div class="flex items-center gap-4">
+            <div class="icon-3d">
+              <i class="ph-duotone ph-anchor text-2xl text-zti-c6"></i>
+            </div>
+            <div>
+              <span
+                class="text-[10px] font-mono text-zti-c5 uppercase tracking-widest"
+                >Authenticated Buyer Workspace</span
+              >
+              <h1
+                class="text-2xl sm:text-3xl font-display font-bold text-zti-c6"
+                id="portal-welcome-title"
+              >
+                Apex Athletics LLC — Sourcing Portal
+              </h1>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 font-mono text-xs">
+            <span
+              class="px-3.5 py-2 rounded-xl bg-zti-c3 border border-zti-c5/40 text-zti-c6 flex items-center gap-2"
+            >
+              <span class="w-2 h-2 rounded-full bg-zti-c5 animate-ping"></span>
+              COSCO SATELLITE AIS FEED LIVE
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div
+            class="glass-card shimmer-sweep p-6 rounded-2xl portal-anim-item"
+            data-tilt
+            data-tilt-max="6"
+          >
+            <div
+              class="flex justify-between items-center text-xs font-mono text-zti-c5"
+            >
+              <span>ACTIVE PURCHASE ORDERS</span>
+              <i class="ph-duotone ph-package text-xl text-zti-c6"></i>
+            </div>
+            <div class="text-3xl font-display font-black text-zti-c6 mt-2">
+              3 Contracts
+            </div>
+            <div class="text-[11px] font-mono text-zti-c5 mt-1">
+              38,500 Total Garment Units
+            </div>
+          </div>
+          <div
+            class="glass-card shimmer-sweep p-6 rounded-2xl portal-anim-item"
+            data-tilt
+            data-tilt-max="6"
+          >
+            <div
+              class="flex justify-between items-center text-xs font-mono text-zti-c5"
+            >
+              <span>IN-TRANSIT OCEAN FREIGHT</span>
+              <i class="ph-duotone ph-boat text-xl text-zti-c6"></i>
+            </div>
+            <div class="text-3xl font-display font-black text-zti-c6 mt-2">
+              15,000 Pcs
+            </div>
+            <div class="text-[11px] font-mono text-zti-c5 mt-1">
+              Vessel: COSCO TAURUS (ETA Nov 04)
+            </div>
+          </div>
+          <div
+            class="glass-card shimmer-sweep p-6 rounded-2xl portal-anim-item"
+            data-tilt
+            data-tilt-max="6"
+          >
+            <div
+              class="flex justify-between items-center text-xs font-mono text-zti-c5"
+            >
+              <span>AQL 1.5 QUALITY PASS</span>
+              <i class="ph-duotone ph-seal-check text-xl text-zti-c6"></i>
+            </div>
+            <div class="text-3xl font-display font-black text-zti-c6 mt-2">
+              99.8%
+            </div>
+            <div class="text-[11px] font-mono text-zti-c5 mt-1">
+              SGS Certificate #SGS-89201
+            </div>
+          </div>
+          <div
+            class="glass-card shimmer-sweep p-6 rounded-2xl portal-anim-item"
+            data-tilt
+            data-tilt-max="6"
+          >
+            <div
+              class="flex justify-between items-center text-xs font-mono text-zti-c5"
+            >
+              <span>OPEN CREDIT LINE</span>
+              <i class="ph-duotone ph-bank text-xl text-zti-c6"></i>
+            </div>
+            <div class="text-3xl font-display font-black text-zti-c6 mt-2">
+              $250,000
+            </div>
+            <div class="text-[11px] font-mono text-zti-c5 mt-1">
+              Terms: 30% T/T • 70% Against B/L
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-7">
+          <div
+            class="lg:col-span-7 glass-card shimmer-sweep p-7 rounded-3xl space-y-6 portal-anim-item"
+          >
+            <div
+              class="flex justify-between items-center border-b border-zti-c4 pb-4"
+            >
+              <div>
+                <span class="text-[10px] font-mono text-zti-c5 uppercase"
+                  >LIVE PRODUCTION & VESSEL TRACKER</span
+                >
+                <h3 class="text-xl font-display font-bold text-zti-c6">
+                  PO-ZTI-2026-9041 • AeroVent Pro Dry-Fit Tees
+                </h3>
+              </div>
+              <span
+                class="px-3 py-1 rounded-lg bg-zti-c4 text-zti-c6 font-mono text-xs font-bold"
+                >$57,750.00</span
+              >
+            </div>
+
+            <div class="space-y-3 font-mono text-xs">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>01. Ordering & 3D CLO CAD Approval</span
+                  ><span class="text-zti-c6">100% PASSED</span>
+                </div>
+                <div class="h-2 bg-zti-c1 rounded-full overflow-hidden">
+                  <div
+                    class="portal-bar h-full bg-zti-c5 rounded-full"
+                    data-width="100%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>02. Stitching (Juki Flatlock & Laser Cut)</span
+                  ><span class="text-zti-c6">100% PASSED</span>
+                </div>
+                <div class="h-2 bg-zti-c1 rounded-full overflow-hidden">
+                  <div
+                    class="portal-bar h-full bg-zti-c5 rounded-full"
+                    data-width="100%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>03. Packing (SGS AQL 1.5 & 3PL Polybagging)</span
+                  ><span class="text-zti-c6">100% PASSED</span>
+                </div>
+                <div class="h-2 bg-zti-c1 rounded-full overflow-hidden">
+                  <div
+                    class="portal-bar h-full bg-zti-c5 rounded-full"
+                    data-width="100%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>04. Shipping (Ningbo → Port of Long Beach)</span
+                  ><span class="text-zti-c6">76% IN TRANSIT</span>
+                </div>
+                <div class="h-2 bg-zti-c1 rounded-full overflow-hidden">
+                  <div
+                    class="portal-bar h-full bg-zti-c6 rounded-full bar-alive"
+                    data-width="76%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button
+                onclick="
+                  ZTi.toast('Downloading Commercial Invoice #INV-9041.pdf')
+                "
+                class="px-4 py-2.5 rounded-xl btn-emerald-glass text-xs"
+              >
+                <i class="ph-duotone ph-file-pdf mr-1"></i> Commercial Invoice
+              </button>
+              <button
+                onclick="
+                  ZTi.toast('Downloading Bill of Lading #BOL-COSU-89201948.pdf')
+                "
+                class="px-4 py-2.5 rounded-xl btn-emerald-glass text-xs"
+              >
+                <i class="ph-duotone ph-anchor mr-1"></i> Bill of Lading (B/L)
+              </button>
+              <button
+                onclick="
+                  ZTi.toast('Downloading SGS AQL 1.5 Inspection Report.pdf')
+                "
+                class="px-4 py-2.5 rounded-xl btn-mint text-xs"
+              >
+                <i class="ph-bold ph-seal-check mr-1"></i> SGS QC Report
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="lg:col-span-5 glass-card p-7 rounded-3xl space-y-4 portal-anim-item"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-xs font-mono text-zti-c5 uppercase">
+                Your Monthly Sourcing Volume (Units)
+              </h3>
+              <span
+                class="text-[10px] font-mono text-zti-c6 bg-zti-c3 px-2 py-0.5 rounded"
+                >LIVE CHART</span
+              >
+            </div>
+            <div class="h-64">
+              <canvas id="chart-client-portal"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- VIEW 8: OWNER ADMIN ERP COMMAND CENTER (STRICTLY OWNER ONLY)    -->
+      <!-- =============================================================== -->
+      <section
+        id="view-admin"
+        class="view-pane hidden max-w-7xl mx-auto px-6 py-12 space-y-8"
+      >
+        <div
+          class="glass-card p-6 rounded-3xl flex flex-col lg:flex-row justify-between lg:items-center gap-4 erp-anim-item"
+        >
+          <div class="flex items-center gap-4">
+            <div class="icon-3d">
+              <i class="ph-duotone ph-crown text-2xl text-zti-c6"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="text-[10px] font-mono text-zti-c5 uppercase tracking-widest"
+                  >ROOT CLEARANCE • OWNER ONLY</span
+                >
+                <span
+                  class="px-2 py-0.5 rounded bg-zti-c5 text-zti-c1 font-mono text-[9px] font-bold"
+                  >FULL ACCESS</span
+                >
+              </div>
+              <h1
+                class="text-2xl sm:text-3xl font-display font-bold text-zti-c6"
+              >
+                ZTi Global Enterprise ERP & Admin Command
+              </h1>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 font-mono text-xs">
+            <button
+              onclick="ZTi.triggerErpReportAnimation()"
+              class="px-4 py-2.5 rounded-xl btn-emerald-glass flex items-center gap-2"
+            >
+              <i class="ph-bold ph-arrows-clockwise"></i>
+              <span>Re-Sync Live Telemetry</span>
+            </button>
+            <button
+              onclick="ZTi.navigate('portal')"
+              class="px-4 py-2.5 rounded-xl btn-mint flex items-center gap-2"
+            >
+              <i class="ph-bold ph-eye"></i>
+              <span>Inspect Client Portal View</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+          <aside
+            class="w-full lg:w-64 glass-card p-3.5 rounded-3xl space-y-1 text-xs font-mono self-start erp-anim-item"
+          >
+            <div
+              class="text-[10px] text-zti-c5 uppercase tracking-widest px-3 py-2 border-b border-zti-c4 mb-2"
+            >
+              14 Enterprise Modules
+            </div>
+            <button
+              onclick="ZTi.switchErpTab('executive')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl bg-zti-c6 text-zti-c1 font-bold transition"
+              data-erp="executive"
+            >
+              01. Executive Dashboard
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('employees')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="employees"
+            >
+              02. Employee Management
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('recruitment')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="recruitment"
+            >
+              03. Recruitment & CV DB
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('offboarding')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="offboarding"
+            >
+              04. Offboarding & Assets
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('products')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="products"
+            >
+              05. Product & BOM Master
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('inventory')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="inventory"
+            >
+              06. Yarn & Greige Stock
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('orders')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="orders"
+            >
+              07. Order Management
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('crm')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="crm"
+            >
+              08. B2B Buyer CRM
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('finance')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="finance"
+            >
+              09. Finance & L/C Ledger
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('logistics')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="logistics"
+            >
+              10. Import & Export B/L
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('marketing')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="marketing"
+            >
+              11. Marketing & Trade Fairs
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('analytics')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="analytics"
+            >
+              12. Analytics Center
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('documents')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="documents"
+            >
+              13. Document & NDA Vault
+            </button>
+            <button
+              onclick="ZTi.switchErpTab('settings')"
+              class="erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition"
+              data-erp="settings"
+            >
+              14. Security & Settings
+            </button>
+          </aside>
+
+          <div class="flex-1 space-y-7">
+            <div id="erp-pane-executive" class="erp-pane space-y-7">
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 font-mono"
+              >
+                <div
+                  class="glass-card shimmer-sweep p-6 rounded-2xl erp-card-anim"
+                  data-tilt
+                  data-tilt-max="7"
+                >
+                  <div class="flex justify-between text-[10px] text-zti-c5">
+                    <span>YTD EXPORT REVENUE</span>
+                    <i class="ph-duotone ph-trend-up text-lg text-zti-c6"></i>
+                  </div>
+                  <div class="text-2xl font-black text-zti-c6 mt-2">
+                    $18,420,000
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-zti-c1 rounded-full mt-3 overflow-hidden"
+                  >
+                    <div
+                      class="erp-prog-bar h-full bg-zti-c5 rounded-full"
+                      data-w="88%"
+                    ></div>
+                  </div>
+                  <div class="text-[10px] text-zti-c5 mt-2">
+                    ↑ +21.4% vs Prior Year
+                  </div>
+                </div>
+
+                <div
+                  class="glass-card shimmer-sweep p-6 rounded-2xl erp-card-anim"
+                  data-tilt
+                  data-tilt-max="7"
+                >
+                  <div class="flex justify-between text-[10px] text-zti-c5">
+                    <span>NET OPERATING PROFIT</span>
+                    <i class="ph-duotone ph-coins text-lg text-zti-c6"></i>
+                  </div>
+                  <div class="text-2xl font-black text-zti-c6 mt-2">
+                    $4,180,000
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-zti-c1 rounded-full mt-3 overflow-hidden"
+                  >
+                    <div
+                      class="erp-prog-bar h-full bg-zti-c6 rounded-full"
+                      data-w="76%"
+                    ></div>
+                  </div>
+                  <div class="text-[10px] text-zti-c5 mt-2">
+                    22.7% Net EBITDA Margin
+                  </div>
+                </div>
+
+                <div
+                  class="glass-card shimmer-sweep p-6 rounded-2xl erp-card-anim"
+                  data-tilt
+                  data-tilt-max="7"
+                >
+                  <div class="flex justify-between text-[10px] text-zti-c5">
+                    <span>ACTIVE FACTORY OUTPUT</span>
+                    <i class="ph-duotone ph-factory text-lg text-zti-c6"></i>
+                  </div>
+                  <div class="text-2xl font-black text-zti-c6 mt-2">
+                    1,940,000 Pcs
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-zti-c1 rounded-full mt-3 overflow-hidden"
+                  >
+                    <div
+                      class="erp-prog-bar h-full bg-zti-c5 rounded-full"
+                      data-w="96%"
+                    ></div>
+                  </div>
+                  <div class="text-[10px] text-zti-c5 mt-2">
+                    14/14 Lines @ 98.4% Efficiency
+                  </div>
+                </div>
+
+                <div
+                  class="glass-card shimmer-sweep p-6 rounded-2xl erp-card-anim"
+                  data-tilt
+                  data-tilt-max="7"
+                >
+                  <div class="flex justify-between text-[10px] text-zti-c5">
+                    <span>PENDING RFQ PIPELINE</span>
+                    <i class="ph-duotone ph-files text-lg text-zti-c6"></i>
+                  </div>
+                  <div class="text-2xl font-black text-zti-c6 mt-2">
+                    $4,620,000
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-zti-c1 rounded-full mt-3 overflow-hidden"
+                  >
+                    <div
+                      class="erp-prog-bar h-full bg-zti-c6 rounded-full"
+                      data-w="82%"
+                    ></div>
+                  </div>
+                  <div class="text-[10px] text-zti-c5 mt-2">
+                    26 High-Volume Tenders Active
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div
+                  class="lg:col-span-7 glass-card shimmer-sweep p-6 rounded-3xl erp-card-anim"
+                >
+                  <div class="flex justify-between items-center mb-4">
+                    <div>
+                      <span class="text-[10px] font-mono text-zti-c5 uppercase"
+                        >FINANCIAL TELEMETRY</span
+                      >
+                      <h3 class="text-sm font-bold text-zti-c6 font-mono">
+                        Monthly Revenue vs Net Profit Trend ($ USD)
+                      </h3>
+                    </div>
+                    <span
+                      class="px-2.5 py-1 rounded bg-zti-c3 text-zti-c5 font-mono text-[10px]"
+                      >ANIMATED CURVE</span
+                    >
+                  </div>
+                  <div class="h-64">
+                    <canvas id="chart-erp-revenue"></canvas>
+                  </div>
+                </div>
+
+                <div
+                  class="lg:col-span-5 glass-card shimmer-sweep p-6 rounded-3xl erp-card-anim"
+                >
+                  <div class="flex justify-between items-center mb-4">
+                    <div>
+                      <span class="text-[10px] font-mono text-zti-c5 uppercase"
+                        >GLOBAL DISTRIBUTION</span
+                      >
+                      <h3 class="text-sm font-bold text-zti-c6 font-mono">
+                        Export Share by Destination Market
+                      </h3>
+                    </div>
+                    <span
+                      class="px-2.5 py-1 rounded bg-zti-c3 text-zti-c5 font-mono text-[10px]"
+                      >48 COUNTRIES</span
+                    >
+                  </div>
+                  <div class="h-64">
+                    <canvas id="chart-erp-regions"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div
+                  class="lg:col-span-6 glass-card shimmer-sweep p-6 rounded-3xl erp-card-anim"
+                >
+                  <div class="flex justify-between items-center mb-4">
+                    <div>
+                      <span class="text-[10px] font-mono text-zti-c5 uppercase"
+                        >NINGBO & DONGGUAN PLANTS</span
+                      >
+                      <h3 class="text-sm font-bold text-zti-c6 font-mono">
+                        Garment Output by Category (Thousands)
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="h-60">
+                    <canvas id="chart-erp-categories"></canvas>
+                  </div>
+                </div>
+
+                <div
+                  class="lg:col-span-6 glass-card shimmer-sweep p-6 rounded-3xl erp-card-anim"
+                >
+                  <div class="flex justify-between items-center mb-4">
+                    <div>
+                      <span class="text-[10px] font-mono text-zti-c5 uppercase"
+                        >MULTI-AXIS BENCHMARK</span
+                      >
+                      <h3 class="text-sm font-bold text-zti-c6 font-mono">
+                        Factory Performance & AQL 1.5 Radar
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="h-60"><canvas id="chart-erp-radar"></canvas></div>
+                </div>
+              </div>
+
+              <div
+                class="glass-card shimmer-sweep p-7 rounded-3xl space-y-4 erp-card-anim"
+              >
+                <div
+                  class="flex justify-between items-center border-b border-zti-c4 pb-3"
+                >
+                  <div>
+                    <span class="text-[10px] font-mono text-zti-c5 uppercase"
+                      >REAL-TIME ENTERPRISE LEDGER</span
+                    >
+                    <h3 class="text-lg font-display font-bold text-zti-c6">
+                      Live Executive Operations & Settlement Report
+                    </h3>
+                  </div>
+                  <button
+                    onclick="
+                      ZTi.toast(
+                        'Exported Full Executive Audit Report (PDF/XLSX)',
+                      )
+                    "
+                    class="px-4 py-2 rounded-xl btn-mint text-xs"
+                  >
+                    Download Signed Report
+                  </button>
+                </div>
+                <div class="space-y-3 font-mono text-xs" id="exec-live-reports">
+                  <div
+                    class="erp-report-row p-4 rounded-xl bg-zti-c1/80 border border-zti-c4 flex flex-col sm:flex-row justify-between sm:items-center gap-2"
+                  >
+                    <span
+                      ><strong class="text-zti-c6">[L/C SETTLED]</strong> Bank
+                      of China Irrevocable L/C #BOC-99201 — KraftWerk GmbH
+                      (DE)</span
+                    >
+                    <span class="text-zti-c5 font-bold"
+                      >+$142,500.00 USD • VERIFIED</span
+                    >
+                  </div>
+                  <div
+                    class="erp-report-row p-4 rounded-xl bg-zti-c1/80 border border-zti-c4 flex flex-col sm:flex-row justify-between sm:items-center gap-2"
+                  >
+                    <span
+                      ><strong class="text-zti-c6">[CONTAINER DISPATCH]</strong>
+                      40HQ #COSU6940291 (15,000 Dry-Fit Tees) Loaded at Ningbo
+                      Port</span
+                    >
+                    <span class="text-zti-c5 font-bold"
+                      >ON SCHEDULE • B/L ISSUED</span
+                    >
+                  </div>
+                  <div
+                    class="erp-report-row p-4 rounded-xl bg-zti-c1/80 border border-zti-c4 flex flex-col sm:flex-row justify-between sm:items-center gap-2"
+                  >
+                    <span
+                      ><strong class="text-zti-c6">[SGS AUDIT PASS]</strong>
+                      Dongguan Line 02 Seamless Leggings Batch #DL-884 (AQL
+                      1.5)</span
+                    >
+                    <span class="text-zti-c5 font-bold"
+                      >0 MAJOR DEFECTS • PASSED</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="erp-pane-dynamic"
+              class="erp-pane hidden glass-card shimmer-sweep p-8 rounded-3xl space-y-6"
+            >
+              <div
+                class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-zti-c4 pb-5 gap-4"
+              >
+                <div>
+                  <span
+                    id="erp-dyn-tag"
+                    class="text-xs font-mono text-zti-c5 uppercase"
+                    >ZTI ENTERPRISE ERP MODULE</span
+                  >
+                  <h3
+                    id="erp-dyn-title"
+                    class="text-2xl font-display font-bold text-zti-c6 mt-1"
+                  >
+                    Module Title
+                  </h3>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    onclick="ZTi.animateDynamicModule()"
+                    class="px-4 py-2 rounded-xl btn-emerald-glass text-xs"
+                  >
+                    <i class="ph-bold ph-magic-wand mr-1"></i> Animate Telemetry
+                  </button>
+                  <button
+                    onclick="ZTi.toast('Exported Module Report to CSV')"
+                    class="px-4 py-2 rounded-xl btn-mint text-xs"
+                  >
+                    Export Report (CSV)
+                  </button>
+                </div>
+              </div>
+              <p
+                id="erp-dyn-desc"
+                class="text-xs font-mono text-zti-c5 leading-relaxed"
+              ></p>
+              <div
+                id="erp-dyn-metrics"
+                class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs"
+              ></div>
+              <div id="erp-dyn-table" class="space-y-3 font-mono text-xs"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================================================================= -->
+    <!-- ROLE-BASED AUTHENTICATION MODAL (LOGIN / SIGN UP / FORGOT PASS)   -->
+    <!-- ================================================================= -->
+    <div
+      id="auth-modal"
+      class="fixed inset-0 z-50 bg-[#031415]/90 backdrop-blur-2xl hidden flex items-center justify-center p-6"
+    >
+      <div
+        class="glass-modal max-w-md w-full p-8 rounded-3xl space-y-6 relative animate__animated animate__zoomIn animate__faster"
+      >
+        <div
+          class="flex justify-between items-start border-b border-zti-c4 pb-4"
+        >
+          <div>
+            <span
+              class="text-[10px] font-mono text-zti-c5 uppercase tracking-widest"
+              >Encrypted Role-Based Gate</span
+            >
+            <h3 class="font-display font-bold text-zti-c6 text-2xl mt-0.5">
+              Enterprise Portal Access
+            </h3>
+          </div>
+          <button
+            onclick="ZTi.closeAuthModal()"
+            class="text-zti-c5 hover:text-white font-mono text-sm"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div
+          class="grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-zti-c1 border border-zti-c4 font-mono text-xs"
+        >
+          <button
+            onclick="ZTi.switchAuthTab('login')"
+            id="auth-tab-login"
+            class="py-2 rounded-lg bg-zti-c6 text-zti-c1 font-bold transition"
+          >
+            Sign In
+          </button>
+          <button
+            onclick="ZTi.switchAuthTab('signup')"
+            id="auth-tab-signup"
+            class="py-2 rounded-lg text-zti-c5 hover:text-zti-c6 transition"
+          >
+            Register
+          </button>
+          <button
+            onclick="ZTi.switchAuthTab('forgot')"
+            id="auth-tab-forgot"
+            class="py-2 rounded-lg text-zti-c5 hover:text-zti-c6 transition"
+          >
+            Reset Key
+          </button>
+        </div>
+
+        <form
+          id="form-auth-login"
+          onsubmit="ZTi.handleLogin(event)"
+          class="space-y-4 font-mono text-xs"
+        >
+          <div>
+            <label class="block text-zti-c5 uppercase mb-1.5"
+              >Select Access Clearance</label
+            >
+            <select
+              id="login-role-select"
+              class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3 text-zti-c6 outline-none focus:border-zti-c6"
+            >
+              <option value="buyer">
+                International Buyer / Client Portal Only
+              </option>
+              <option value="owner">
+                Executive Owner (All Portals + 14-Module Admin ERP)
+              </option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-zti-c5 uppercase mb-1.5"
+              >Corporate Email</label
+            >
+            <input
+              id="login-email"
+              type="email"
+              required
+              value="buyer@apexathletics.com"
+              class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3 text-zti-c6 outline-none focus:border-zti-c6"
+            />
+          </div>
+          <div>
+            <label class="block text-zti-c5 uppercase mb-1.5"
+              >Security Password</label
+            >
+            <input
+              id="login-pass"
+              type="password"
+              required
+              value="Buyer2026!"
+              class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3 text-zti-c6 outline-none focus:border-zti-c6"
+            />
+          </div>
+
+          <div
+            class="p-3 rounded-xl bg-zti-c1/90 border border-zti-c4 space-y-2"
+          >
+            <div class="text-[10px] text-zti-c5 uppercase">
+              Quick Demo Credentials (Click to Autofill):
+            </div>
+            <div class="flex gap-2">
+              <button
+                type="button"
+                onclick="ZTi.fillDemoAuth('buyer')"
+                class="flex-1 py-1.5 px-2 rounded bg-zti-c3 hover:bg-zti-c4 text-zti-c6 text-[10px] border border-zti-c5/30"
+              >
+                Fill Customer Login
+              </button>
+              <button
+                type="button"
+                onclick="ZTi.fillDemoAuth('owner')"
+                class="flex-1 py-1.5 px-2 rounded bg-zti-c5 text-zti-c1 font-bold text-[10px]"
+              >
+                Fill Owner ERP Login
+              </button>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3.5 rounded-xl btn-mint text-xs"
+          >
+            Authenticate & Unlock Workspace →
+          </button>
+        </form>
+
+        <form
+          id="form-auth-signup"
+          onsubmit="ZTi.handleSignup(event)"
+          class="hidden space-y-4 font-mono text-xs"
+        >
+          <div>
+            <label class="block text-zti-c5 uppercase mb-1"
+              >Company / Brand Legal Name *</label
+            >
+            <input
+              id="signup-company"
+              type="text"
+              required
+              placeholder="e.g. Nordic Activewear AB"
+              class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3 text-zti-c6 outline-none"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-zti-c5 uppercase mb-1"
+                >Contact Name *</label
+              >
+              <input
+                id="signup-name"
+                type="text"
+                required
+                placeholder="Full Name"
+                class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3 text-zti-c6 outline-none"
+              />
+            </div>
+            <div>
+              <label class="block text-zti-c5 uppercase mb-1">Country *</label>
+              <input
+                id="signup-country"
+                type="text"
+                required
+                placeholder="e.g. Sweden"
+                class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3 text-zti-c6 outline-none"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="block text-zti-c5 uppercase mb-1"
+              >Corporate Email *</label
+            >
+            <input
+              id="signup-email"
+              type="email"
+              required
+              placeholder="procurement@company.com"
+              class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3 text-zti-c6 outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-zti-c5 uppercase mb-1"
+              >Create Password *</label
+            >
+            <input
+              id="signup-pass"
+              type="password"
+              required
+              minlength="6"
+              placeholder="••••••••"
+              class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3 text-zti-c6 outline-none"
+            />
+          </div>
+          <div class="text-[10px] text-zti-c5">
+            Note: New registrations are granted
+            <strong class="text-zti-c6">Customer Portal</strong> clearance.
+            Owner Admin ERP remains strictly restricted.
+          </div>
+          <button
+            type="submit"
+            class="w-full py-3.5 rounded-xl btn-mint text-xs"
+          >
+            Register Corporate Buyer Account →
+          </button>
+        </form>
+
+        <form
+          id="form-auth-forgot"
+          onsubmit="ZTi.handleForgot(event)"
+          class="hidden space-y-4 font-mono text-xs"
+        >
+          <p class="text-zti-c5 leading-relaxed">
+            Enter your registered corporate email to receive a 2FA encrypted
+            password reset token from our Ningbo security server.
+          </p>
+          <div>
+            <label class="block text-zti-c5 uppercase mb-1"
+              >Registered Corporate Email *</label
+            >
+            <input
+              type="email"
+              required
+              placeholder="sourcing@company.com"
+              class="w-full bg-zti-c1 border border-zti-c4 rounded-xl p-3 text-zti-c6 outline-none"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full py-3.5 rounded-xl btn-mint text-xs"
+          >
+            Dispatch Reset Token
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- SPEC CALCULATOR MODAL -->
+    <div
+      id="spec-modal"
+      class="fixed inset-0 z-50 bg-[#031415]/90 backdrop-blur-xl hidden flex items-center justify-center p-6"
+    >
+      <div class="glass-modal max-w-lg w-full p-8 rounded-3xl space-y-6">
+        <div
+          class="flex justify-between items-start border-b border-zti-c4 pb-4"
+        >
+          <div>
+            <h3
+              id="modal-item-title"
+              class="font-display font-bold text-zti-c6 text-xl"
+            >
+              Product Specifications
+            </h3>
+            <div id="modal-item-sku" class="text-xs font-mono text-zti-c5">
+              SKU
+            </div>
+          </div>
+          <button
+            onclick="ZTi.closeSpecModal()"
+            class="text-zti-c5 hover:text-white font-mono text-sm"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="space-y-4 text-xs font-mono">
+          <div>
+            <span class="text-zti-c5">FABRIC COMPOSITION:</span>
+            <span id="modal-item-comp" class="text-zti-c6"></span>
+          </div>
+          <div>
+            <span class="text-zti-c5">MINIMUM ORDER (MOQ):</span>
+            <span id="modal-item-moq" class="text-zti-c6"></span>
+          </div>
+          <div class="pt-2">
+            <div class="flex justify-between mb-2">
+              <span class="text-zti-c5">SIMULATED ORDER VOLUME:</span>
+              <span
+                id="modal-item-qty-label"
+                class="text-zti-c6 font-bold"
+              ></span>
+            </div>
+            <input
+              id="modal-item-qty-slider"
+              type="range"
+              class="w-full accent-zti-c5 cursor-pointer"
+            />
+          </div>
+          <div class="p-4 rounded-2xl bg-zti-c1 border border-zti-c4 space-y-2">
+            <div class="flex justify-between">
+              <span class="text-zti-c5">Estimated Unit FOB:</span>
+              <span
+                id="modal-item-unit-cost"
+                class="text-zti-c6 font-bold text-base"
+              ></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-zti-c5">Total Contract Value:</span>
+              <span
+                id="modal-item-total-cost"
+                class="text-zti-c5 font-bold"
+              ></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-zti-c5">Container Load:</span>
+              <span id="modal-item-cbm" class="text-zti-c6"></span>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <button
+            onclick="
+              ZTi.closeSpecModal();
+              ZTi.navigate('rfq');
+            "
+            class="flex-1 py-3.5 rounded-xl btn-mint text-xs"
+          >
+            Lock in Official RFQ Tender
+          </button>
+          <button
+            onclick="ZTi.closeSpecModal()"
+            class="px-5 py-3.5 rounded-xl btn-emerald-glass text-xs"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOATING SOURCING AI ASSISTANT -->
+    <div class="fixed bottom-6 left-6 z-50">
+      <button
+        onclick="ZTi.toggleAi()"
+        class="icon-3d !w-14 !h-14 !rounded-full cursor-pointer border border-zti-c6/60 shadow-2xl"
+      >
+        <i class="ph-duotone ph-robot text-2xl text-zti-c6"></i>
+      </button>
+      <div
+        id="ai-chat-window"
+        class="hidden absolute bottom-20 left-0 w-80 sm:w-96 glass-modal rounded-3xl shadow-2xl flex flex-col h-[440px] overflow-hidden"
+      >
+        <div
+          class="p-4 border-b border-zti-c4 flex justify-between items-center bg-zti-c2"
+        >
+          <div class="flex items-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-zti-c5 animate-ping"></span>
+            <span class="font-display font-bold text-zti-c6 text-xs"
+              >ZTi Sourcing Engineering AI</span
+            >
+          </div>
+          <button
+            onclick="ZTi.toggleAi()"
+            class="text-zti-c5 hover:text-white font-mono text-xs"
+          >
+            ✕
+          </button>
+        </div>
+        <div id="ai-messages" class="flex-1 p-4 space-y-3 overflow-y-auto">
+          <div
+            class="p-3 rounded-2xl bg-zti-c1 text-zti-c6 border border-zti-c4 text-xs font-mono leading-relaxed mr-6"
+          >
+            Welcome to ZTi Engineering. Ask me about our 4-stage workflow
+            (Ordering, Stitching, Packing, Shipping), MOQs, or container CBM
+            capacities.
+          </div>
+        </div>
+        <div class="p-3 border-t border-zti-c4 flex gap-2 bg-zti-c1">
+          <input
+            id="ai-input"
+            type="text"
+            placeholder="Ask sourcing question..."
+            onkeydown="if (event.key === 'Enter') ZTi.sendAi();"
+            class="flex-1 bg-zti-c2 border border-zti-c4 rounded-xl px-3 py-2 text-xs text-zti-c6 outline-none font-mono"
+          />
+          <button
+            onclick="ZTi.sendAi()"
+            class="px-4 py-2 rounded-xl btn-mint text-xs"
+          >
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zti-c4 bg-[#031415] mt-20">
+      <div
+        class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row justify-between items-center text-xs font-mono text-zti-c5 gap-4"
+      >
+        <div class="flex items-center space-x-3">
+          <span
+            class="font-arch font-extrabold text-lg text-zti-c6 tracking-widest"
+            >ZTi GLOBAL</span
+          >
+          <span>•</span>
+          <span>Ningbo & Dongguan, China</span>
+        </div>
+        <div>© 2026 ZTi Import Export Co., Ltd All Rights Are Reserved</div>
+        <p><div>Designed By Muhammadmohsin.webstudio</div></p>
+      </div>
+    </footer>
+
+    <!-- TOAST CONTAINER -->
+    <div
+      id="toast-container"
+      class="fixed bottom-6 right-6 z-50 flex flex-col space-y-3 pointer-events-none"
+    ></div>
+
+    <!-- ================================================================= -->
+    <!-- COMPLETE JAVASCRIPT + 60FPS 4-STAGE CINEMA MOVIE ENGINE           -->
+    <!-- ================================================================= -->
+    <script>
+      const ZTi = {
+        currency: "USD",
+        rates: {
+          USD: 1.0,
+          EUR: 0.92,
+          GBP: 0.79,
+          SAR: 3.75,
+          AED: 3.67,
+          CNY: 7.24,
+        },
+        symbols: {
+          USD: "$",
+          EUR: "€",
+          GBP: "£",
+          SAR: "SAR ",
+          AED: "AED ",
+          CNY: "¥",
+        },
+
+        authUser: null,
+        erpCharts: {},
+        clientChart: null,
+
+        // Google Flow 4-Stage Automated Storyboard State
+        activeFlowStage: 0,
+        flowAutoplay: true,
+        theaterMode: false,
+        flowProgressTween: null,
+        cinemaFrame: 0,
+
+        // 4-Stage Google Flow Production Storyboard Data (Ordering -> Stitching -> Packing -> Shipping)
+        flowStages: [
+          {
+            id: 0,
+            hudTag: "REC • GOOGLE FLOW AI FILM [01: ORDERING & 3D CLO CAD]",
+            pill: "LIVE SCENE 01/04 • B2B ORDERING & 3D CLO HOLOGRAM SCAN",
+            stageTag: "STAGE 01 • ORDERING & CAD",
+            title: "B2B Tech Pack & 3D CLO Pattern Grading",
+            desc: "International buyers submit custom tech packs, GSM requirements, and Pantone codes via our encrypted RFQ desk. Our 18 pattern engineers render 3D CLO physics avatars within 48 hours.",
+            icon: "ph-compass-tool",
+            m1Label: "3D CLO Pattern Grading Accuracy",
+            m1Val: "99.8% (±0.2mm)",
+            m1Pct: "99%",
+            m2Label: "BOM Costing & Lab Dip Turnaround",
+            m2Val: "24 Hours",
+            m2Pct: "95%",
+            s1: "300 Pcs",
+            s1Lbl: "Min MOQ",
+            s2: "48 Hours",
+            s2Lbl: "3D CAD Render",
+            s3: "100% NDA",
+            s3Lbl: "IP Vault",
+          },
+          {
+            id: 1,
+            hudTag:
+              "REC • GOOGLE FLOW AI FILM [02: CNC LASER & FLATLOCK STITCHING]",
+            pill: "LIVE SCENE 02/04 • AUTOMATED CNC LASER & FLATLOCK STITCHING",
+            stageTag: "STAGE 02 • STITCHING & KNITTING",
+            title: "Juki 4-Needle Flatlock & Santoni Seamless Lines",
+            desc: "Once the pre-production sample is approved, 60 Italian Santoni circular machines and 14 high-speed Juki 4-needle 6-thread lines assemble up to 64,200 garments daily with zero chafing.",
+            icon: "ph-scissors",
+            m1Label: "Santoni & Juki Line Efficiency (14 Lines)",
+            m1Val: "98.4% Active Load",
+            m1Pct: "98%",
+            m2Label: "Gerber CNC Laser Multi-Ply Output",
+            m2Val: "64,200 Pcs / Day",
+            m2Pct: "93%",
+            s1: "60 Units",
+            s1Lbl: "Santoni Looms",
+            s2: "4-Needle",
+            s2Lbl: "Flatlock Seam",
+            s3: "65,000 m²",
+            s3Lbl: "Plant Area",
+          },
+          {
+            id: 2,
+            hudTag:
+              "REC • GOOGLE FLOW AI FILM [03: AQL 1.5 SCAN & 3PL PACKING]",
+            pill: "LIVE SCENE 03/04 • CONVEYOR METAL SCAN & 3PL POLYBAG PACKING",
+            stageTag: "STAGE 03 • PACKING & QC AUDIT",
+            title: "Conveyor Needle Detection & Barcoded Packing",
+            desc: "Every finished garment passes through dual-head conveyor metal needle detection, SGS inline AQL 1.5 dimensional measurement, automated steam folding, and frosted zip-lock polybagging.",
+            icon: "ph-package",
+            m1Label: "SGS / Intertek Inline AQL 1.5 Pass Rate",
+            m1Val: "99.6% Zero-Defect",
+            m1Pct: "99%",
+            m2Label: "Automated 3PL Barcode & Carton Sealing",
+            m2Val: "2,800 Cartons / Day",
+            m2Pct: "96%",
+            s1: "100% Scan",
+            s1Lbl: "Metal Detector",
+            s2: "AQL 1.5",
+            s2Lbl: "SGS Certified",
+            s3: "FBA / 3PL",
+            s3Lbl: "Ready Barcodes",
+          },
+          {
+            id: 3,
+            hudTag:
+              "REC • GOOGLE FLOW AI FILM [04: NINGBO PORT & CONTAINER SHIPPING]",
+            pill: "LIVE SCENE 04/04 • NINGBO PORT GANTRY CRANE & OCEAN FREIGHT",
+            stageTag: "STAGE 04 • GLOBAL SHIPPING",
+            title: "Direct Container Loading & COSCO Satellite Transit",
+            desc: "Sealed export cartons are stuffed directly into 20GP and 40HQ containers at our bonded dock and dispatched via Ningbo-Zhoushan and Shenzhen ports under FOB, CIF, or DDP door-to-door terms.",
+            icon: "ph-boat",
+            m1Label: "On-Time Vessel Departure (COSCO / Maersk)",
+            m1Val: "99.2% Schedule Lock",
+            m1Pct: "99%",
+            m2Label: "Customs EDI Clearance & B/L Issuance",
+            m2Val: "0.6 Days Port Dwell",
+            m2Pct: "97%",
+            s1: "48+ Nations",
+            s1Lbl: "Export Routes",
+            s2: "1,450+ TEU",
+            s2Lbl: "Annual Volume",
+            s3: "FOB / DDP",
+            s3Lbl: "Incoterms 2020",
+          },
+        ],
+
+        products: [
+          {
+            id: "ZTI-AP-01",
+            name: "AeroVent Pro Dry-Fit T-Shirt",
+            category: "t-shirts",
+            subCategory: "Performance Activewear",
+            basePriceUSD: 3.85,
+            moq: 500,
+            leadDays: 21,
+            gsm: 160,
+            image:
+              "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80",
+            composition: "88% Recycled Polyester / 12% Elastane",
+            colors: ["#051F20", "#163832", "#235347", "#8EB69B", "#DAF1DE"],
+            features: [
+              "Moisture-Wicking",
+              "Silver-Ion Anti-Odor",
+              "Laser Back Perforations",
+            ],
+            tiers: [
+              { qty: 500, price: 4.6 },
+              { qty: 2500, price: 4.1 },
+              { qty: 10000, price: 3.85 },
+            ],
+          },
+          {
+            id: "ZTI-AP-02",
+            name: "Santoni Seamless Sculpt Legging",
+            category: "compression",
+            subCategory: "Seamless & Compression",
+            basePriceUSD: 6.4,
+            moq: 800,
+            leadDays: 25,
+            gsm: 320,
+            image:
+              "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=800&q=80",
+            composition: "80% Polyamide (Nylon 6.6) / 20% Lycra",
+            colors: ["#051F20", "#0B2B26", "#235347", "#8EB69B"],
+            features: [
+              "100% Squat-Proof",
+              "Graduated Compression",
+              "3D Ribbed Waistband",
+            ],
+            tiers: [
+              { qty: 800, price: 7.5 },
+              { qty: 3000, price: 6.9 },
+              { qty: 12000, price: 6.4 },
+            ],
+          },
+          {
+            id: "ZTI-AP-03",
+            name: "Heavyweight Loopback Fleece Hoodie",
+            category: "hoodies",
+            subCategory: "Luxury Gym Streetwear",
+            basePriceUSD: 11.8,
+            moq: 400,
+            leadDays: 28,
+            gsm: 450,
+            image:
+              "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80",
+            composition: "100% Combed Compact French Terry Cotton",
+            colors: ["#051F20", "#163832", "#8EB69B", "#DAF1DE"],
+            features: [
+              "Drop-Shoulder Boxy Cut",
+              "Pre-Shrunk Silicone Enzyme Wash",
+              "Double Hood",
+            ],
+            tiers: [
+              { qty: 400, price: 13.9 },
+              { qty: 2000, price: 12.5 },
+              { qty: 8000, price: 11.8 },
+            ],
+          },
+          {
+            id: "ZTI-AP-04",
+            name: "AeroDynamic Pro Cycling & Match Jersey",
+            category: "jerseys",
+            subCategory: "Custom Team Uniforms",
+            basePriceUSD: 8.9,
+            moq: 300,
+            leadDays: 21,
+            gsm: 140,
+            image:
+              "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+            composition: "85% Italian Micro-Mesh / 15% Elastane",
+            colors: ["#051F20", "#235347", "#8EB69B", "#DAF1DE"],
+            features: [
+              "Bonded Ultrasonic Hems",
+              "YKK Camlock Zip",
+              "Epson HD Sublimation",
+            ],
+            tiers: [
+              { qty: 300, price: 10.5 },
+              { qty: 1500, price: 9.4 },
+              { qty: 6000, price: 8.9 },
+            ],
+          },
+          {
+            id: "ZTI-AP-05",
+            name: "Pro 2-in-1 Marathon Training Shorts",
+            category: "t-shirts",
+            subCategory: "Performance Activewear",
+            basePriceUSD: 5.2,
+            moq: 500,
+            leadDays: 21,
+            gsm: 125,
+            image:
+              "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80",
+            composition: "90% Recycled Poly / 10% Spandex + Liner",
+            colors: ["#051F20", "#163832", "#8EB69B"],
+            features: [
+              "Bounce-Free Phone Pocket",
+              "3M Reflective Trim",
+              "Laser Perforated Hem",
+            ],
+            tiers: [
+              { qty: 500, price: 6.1 },
+              { qty: 2500, price: 5.5 },
+              { qty: 10000, price: 5.2 },
+            ],
+          },
+          {
+            id: "ZTI-AP-06",
+            name: "Elite Club Tracksuit Set (Jacket + Pant)",
+            category: "hoodies",
+            subCategory: "Custom Team Uniforms",
+            basePriceUSD: 14.5,
+            moq: 300,
+            leadDays: 24,
+            gsm: 260,
+            image:
+              "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+            composition: "92% Double-Knit Interlock Poly / 8% Spandex",
+            colors: ["#051F20", "#163832", "#235347", "#DAF1DE"],
+            features: [
+              "3D Embroidered Crest",
+              "Tapered Ankle Zippers",
+              "Anti-Pilling Finish",
+            ],
+            tiers: [
+              { qty: 300, price: 16.8 },
+              { qty: 1500, price: 15.4 },
+              { qty: 5000, price: 14.5 },
+            ],
+          },
+        ],
+
+        erpModulesData: {
+          employees: {
+            title: "02. Employee & Workforce Management",
+            desc: "Biometric shift attendance, skill matrices, payroll disbursements, and line productivity across 1,240 personnel.",
+            metrics: [
+              { label: "NINGBO HQ STAFF", val: "420 Active", pct: "99%" },
+              { label: "DONGGUAN PLANT TECHS", val: "820 Active", pct: "98%" },
+              { label: "MONTHLY PAYROLL", val: "$1.18M USD", pct: "100%" },
+            ],
+            rows: [
+              "EMP-1042 • Chen Wei • Chief 3D CLO Pattern Engineer • Efficiency: 99.4% • Active",
+              "EMP-1088 • Lin Mei • SGS AQL 1.5 Quality Director • Dongguan Line 04 • Active",
+              "EMP-1109 • Zhang Hao • Santoni Seamless Master Technician • Dongguan • Active",
+            ],
+          },
+          recruitment: {
+            title: "03. Recruitment & Textile Talent Database",
+            desc: "Active job postings, technical CAD evaluations, and onboarding pipeline.",
+            metrics: [
+              { label: "OPEN REQUISITIONS", val: "12 Roles", pct: "75%" },
+              { label: "CV DATABASE", val: "1,480 CVs", pct: "90%" },
+              { label: "OFFER ACCEPTANCE", val: "94.2%", pct: "94%" },
+            ],
+            rows: [
+              "REQ-2026-09 • Senior Textile Chemist (Reactive Dye House) • 14 Applicants • Final Round",
+              "REQ-2026-11 • B2B Key Account Director (MENA & EU Desk) • 28 Applicants • Interviewing",
+            ],
+          },
+          offboarding: {
+            title: "04. Offboarding & NDA IP Clearance",
+            desc: "Hardware token revocation, encrypted CAD vault de-authorization, and exit interviews.",
+            metrics: [
+              { label: "ASSET RETURN RATE", val: "100%", pct: "100%" },
+              { label: "NDA COMPLIANCE", val: "100% Locked", pct: "100%" },
+              { label: "RETENTION RATE", val: "96.8%", pct: "97%" },
+            ],
+            rows: [
+              "CLR-882 • CAD Pattern Intern • Workstation Keys Revoked • Post-Exit NDA Verified",
+            ],
+          },
+          products: {
+            title: "05. Product & BOM Costing Master",
+            desc: "Master SKU repository, graded spec sheets, and raw material consumption tables.",
+            metrics: [
+              { label: "ACTIVE OEM SKUS", val: "485 Styles", pct: "88%" },
+              { label: "ODM STOCK BLOCKS", val: "250 Fits", pct: "92%" },
+              { label: "AVG GROSS MARGIN", val: "34.2%", pct: "85%" },
+            ],
+            rows: [
+              "SKU: ZTI-AP-01 • AeroVent Tee (160 GSM) • Mill BOM: $2.42 • FOB: $3.85 • Active",
+              "SKU: ZTI-AP-02 • Santoni Seamless Legging (320 GSM) • Mill BOM: $4.10 • FOB: $6.40 • Active",
+            ],
+          },
+          inventory: {
+            title: "06. Warehouse Yarn & Greige Fabric Stock",
+            desc: "Real-time roll tracking across climate-controlled warehouses in Ningbo and Dongguan.",
+            metrics: [
+              { label: "RECYCLED POLY YARN", val: "240,000 m", pct: "91%" },
+              { label: "NYLON 6.6 LYCRA", val: "85,000 kg", pct: "84%" },
+              { label: "450 GSM FRENCH TERRY", val: "64,000 m", pct: "68%" },
+            ],
+            rows: [
+              "LOT-RP160 • 88/12 Recycled Poly Spandex • Warehouse A-04 • Stock Optimal",
+              "LOT-NY320 • Italian Santoni Nylon 6.6 Yarn • Warehouse B-11 • Stock Optimal",
+            ],
+          },
+          orders: {
+            title: "07. Bulk Production Order Pipeline",
+            desc: "Live sewing line status across 32 high-volume international contracts.",
+            metrics: [
+              { label: "ORDERS IN SEWING", val: "18 POs", pct: "86%" },
+              { label: "AQL 1.5 INSPECTION", val: "7 POs", pct: "95%" },
+              { label: "READY FOR VESSEL", val: "7 POs", pct: "100%" },
+            ],
+            rows: [
+              "PO-ZTI-9041 • Apex Athletics (USA) • 15,000 Pcs • Status: COSCO Ocean Transit",
+              "PO-ZTI-9048 • KraftWerk GmbH (Germany) • 8,500 Pcs • Status: Line 03 Flatlock (88%)",
+              "PO-ZTI-9052 • Gulf Fit Distribution (Saudi Arabia) • 22,000 Pcs • Status: Laser Cutting",
+            ],
+          },
+          crm: {
+            title: "08. Enterprise B2B Buyer CRM",
+            desc: "Global accounts, credit limits, repeat order analytics, and VIP tiering.",
+            metrics: [
+              { label: "ACTIVE VIP BRANDS", val: "68 Accounts", pct: "92%" },
+              { label: "REPEAT ORDER RATE", val: "87.4%", pct: "87%" },
+              { label: "AVG CONTRACT SIZE", val: "$64,500", pct: "80%" },
+            ],
+            rows: [
+              "ACC-01 • Apex Athletics LLC (USA) • LTV: $2.40M • Credit: $250K Approved",
+              "ACC-02 • KraftWerk Sportswear (DE) • LTV: $1.85M • Credit: Irrevocable L/C",
+              "ACC-03 • Gulf Fit Distribution (KSA) • LTV: $1.12M • Credit: DDP Dammam Port",
+            ],
+          },
+          finance: {
+            title: "09. Finance, P&L & Letter of Credit Ledger",
+            desc: "Consolidated USD/CNY treasury, Bank of China L/C settlements, and export tax rebates.",
+            metrics: [
+              { label: "CASH RESERVES (USD)", val: "$6.42M", pct: "94%" },
+              { label: "CLEARED L/C VALUE", val: "$8.90M", pct: "90%" },
+              { label: "EXPORT VAT REBATE", val: "13.0% Claimed", pct: "100%" },
+            ],
+            rows: [
+              "LC-BOC-99201 • $142,500.00 USD • Bank of China Ningbo • Settled & Cleared",
+              "TT-WIRE-88412 • $57,750.00 USD • 70% B/L Balance — Apex Athletics • Settled",
+            ],
+          },
+          logistics: {
+            title: "10. Import & Export Container Manifests",
+            desc: "Customs HS Code declarations, Certificates of Origin, and COSCO/Maersk vessel allocations.",
+            metrics: [
+              { label: "CONTAINERS AT SEA", val: "94 TEU", pct: "89%" },
+              { label: "CUSTOMS CLEARANCE", val: "100% On-Time", pct: "100%" },
+              { label: "AVG PORT DWELL", val: "0.7 Days", pct: "95%" },
+            ],
+            rows: [
+              "CONT-COSU6940291 (40HQ) • Vessel: COSCO TAURUS • Ningbo → Long Beach • Transit",
+              "CONT-MAEU4410928 (40HQ) • Vessel: MAERSK MC-KINNEY • Ningbo → Dammam • Loading",
+            ],
+          },
+          marketing: {
+            title: "11. Global Marketing & Trade Fair ROI",
+            desc: "Lead conversion analytics from ISPO Munich, Canton Fair, and digital B2B funnels.",
+            metrics: [
+              { label: "MONTHLY B2B LEADS", val: "410 Inquiries", pct: "88%" },
+              { label: "RFQ CONVERSION", val: "18.6%", pct: "82%" },
+              { label: "TRADE SHOW ROI", val: "6.4x Return", pct: "94%" },
+            ],
+            rows: [
+              "CMP-ISPO-2026 • ISPO Munich Hall B2 • 148 Brand Scans • $1.4M Pipeline Generated",
+              "CMP-CANTON-139 • Canton Fair Phase 3 • 210 Buyer Visits • $2.1M Pipeline Generated",
+            ],
+          },
+          analytics: {
+            title: "12. Deep Manufacturing & Margin Analytics",
+            desc: "Marker utilization efficiency, defect root-cause telemetry, and energy consumption.",
+            metrics: [
+              { label: "MARKER UTILIZATION", val: "89.4%", pct: "89%" },
+              { label: "FIRST-PASS AQL 1.5", val: "99.6%", pct: "99%" },
+              { label: "SOLAR KILOWATT SHARE", val: "64.0%", pct: "64%" },
+            ],
+            rows: [
+              "ANL-01 • Gerber Laser Marker Optimization saved 42,000 meters of poly-spandex in Q3",
+              "ANL-02 • 3D CLO virtual sampling reduced physical courier sample costs by 58%",
+            ],
+          },
+          documents: {
+            title: "13. Encrypted Tech Pack & NDA Vault",
+            desc: "AES-256 repository for buyer CAD files, signed NNN contracts, and lab certificates.",
+            metrics: [
+              { label: "LOCKED TECH PACKS", val: "1,290 Files", pct: "100%" },
+              { label: "SIGNED NNN / NDAs", val: "340 Contracts", pct: "100%" },
+              { label: "SGS CERTIFICATES", val: "890 Reports", pct: "100%" },
+            ],
+            rows: [
+              "VAULT-NNN-441 • Mutual Non-Disclosure Agreement — Apex Athletics LLC • Encrypted",
+              "VAULT-SGS-992 • OEKO-TEX Standard 100 & Colorfastness Report • Verified",
+            ],
+          },
+          settings: {
+            title: "14. Enterprise Security & RBAC Permissions",
+            desc: "Role-Based Access Control, hardware 2FA enforcement, and cloud snapshot backups.",
+            metrics: [
+              {
+                label: "RBAC ENFORCEMENT",
+                val: "Strict Isolation",
+                pct: "100%",
+              },
+              { label: "2FA HARDWARE KEYS", val: "Active", pct: "100%" },
+              { label: "CLOUD SNAPSHOTS", val: "Hourly Sync", pct: "100%" },
+            ],
+            rows: [
+              "SEC-RULE-01 • Customer Accounts strictly blocked from /admin Owner ERP routes",
+              "SEC-RULE-02 • Owner Root Account granted universal inspection across all portals",
+            ],
+          },
+        },
+
+        init() {
+          this.initFlowCinemaEngine();
+          this.renderCatalog();
+          this.renderHomeShowcase();
+          this.startClock();
+          this.calculateCost();
+          this.animateCounters();
+          this.startFlowStoryboardCycle(0);
+          if (window.VanillaTilt) {
+            VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
+          }
+        },
+
+        // =================================================================
+        // UNBREAKABLE 60FPS REAL-TIME 4-STAGE CINEMA MOVIE ENGINE
+        // Draws & Animates Ordering -> Stitching -> Packing -> Shipping
+        // =================================================================
+        initFlowCinemaEngine() {
+          const canvas = document.getElementById("flow-cinema-canvas");
+          if (!canvas) return;
+          const ctx = canvas.getContext("2d");
+
+          const resize = () => {
+            canvas.width =
+              canvas.parentElement.clientWidth || window.innerWidth;
+            canvas.height =
+              canvas.parentElement.clientHeight || window.innerHeight;
+          };
+          resize();
+          window.addEventListener("resize", resize);
+
+          // Ambient particles for depth
+          const particles = Array.from({ length: 75 }, () => ({
+            x: Math.random() * 1920,
+            y: Math.random() * 1080,
+            r: Math.random() * 2 + 0.6,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            a: Math.random() * 0.5 + 0.2,
+          }));
+
+          const renderLoop = () => {
+            this.cinemaFrame++;
+            const w = canvas.width;
+            const h = canvas.height;
+            const t = this.cinemaFrame * 0.02;
+
+            // Update timecode in HUD
+            const tcEl = document.getElementById("cinema-hud-timecode");
+            if (tcEl && this.cinemaFrame % 3 === 0) {
+              const secs = Math.floor(this.cinemaFrame / 60) % 60;
+              const frames = this.cinemaFrame % 60;
+              tcEl.innerText = `00:0${this.activeFlowStage + 1}:${String(secs).padStart(2, "0")}:${String(frames).padStart(2, "0")} • 60FPS LIVE`;
+            }
+
+            // Deep Emerald Cinema Background Gradient
+            const bgGrad = ctx.createRadialGradient(
+              w * 0.58,
+              h * 0.48,
+              50,
+              w * 0.5,
+              h * 0.5,
+              Math.max(w, h) * 0.85,
+            );
+            bgGrad.addColorStop(0, "#163832");
+            bgGrad.addColorStop(0.55, "#0B2B26");
+            bgGrad.addColorStop(1, "#041415");
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, w, h);
+
+            // Perspective Floor & Ceiling Architectural Grid
+            ctx.save();
+            ctx.strokeStyle = "rgba(142, 182, 155, 0.12)";
+            ctx.lineWidth = 1;
+            const gridSpacing = 65;
+            const offset = (this.cinemaFrame * 0.8) % gridSpacing;
+            for (let x = -offset; x < w; x += gridSpacing) {
+              ctx.beginPath();
+              ctx.moveTo(x, 0);
+              ctx.lineTo(x, h);
+              ctx.stroke();
+            }
+            for (let y = -offset; y < h; y += gridSpacing) {
+              ctx.beginPath();
+              ctx.moveTo(0, y);
+              ctx.lineTo(w, y);
+              ctx.stroke();
+            }
+            ctx.restore();
+
+            // Render Active Scene (0: Ordering, 1: Stitching, 2: Packing, 3: Shipping)
+            if (this.activeFlowStage === 0) {
+              this.drawScene01Ordering(ctx, w, h, t);
+            } else if (this.activeFlowStage === 1) {
+              this.drawScene02Stitching(ctx, w, h, t);
+            } else if (this.activeFlowStage === 2) {
+              this.drawScene03Packing(ctx, w, h, t);
+            } else {
+              this.drawScene04Shipping(ctx, w, h, t);
+            }
+
+            // Floating Bokeh Particles
+            ctx.save();
+            particles.forEach((p) => {
+              p.x = (p.x + p.vx + w) % w;
+              p.y = (p.y + p.vy + h) % h;
+              ctx.fillStyle = `rgba(218, 241, 222, ${p.a})`;
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+              ctx.fill();
+            });
+            ctx.restore();
+
+            requestAnimationFrame(renderLoop);
+          };
+
+          requestAnimationFrame(renderLoop);
+        },
+
+        // SCENE 01: ORDERING (3D CLO Garment Hologram + Laser Spec Scanner + RFQ Stream)
+        drawScene01Ordering(ctx, w, h, t) {
+          const cx = w * 0.56;
+          const cy = h * 0.46;
+          const scale = Math.min(w, h) * 0.0012;
+
+          ctx.save();
+          ctx.translate(cx, cy);
+
+          // Holographic Pedestal Rings
+          for (let i = 1; i <= 3; i++) {
+            ctx.strokeStyle = `rgba(142, 182, 155, ${0.45 / i})`;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.ellipse(
+              0,
+              175 * scale,
+              (150 + i * 35) * scale,
+              (35 + i * 8) * scale,
+              0,
+              0,
+              Math.PI * 2,
+            );
+            ctx.stroke();
+          }
+
+          // Rotating 3D Sportswear T-Shirt / Jersey Wireframe Silhouette
+          const rot = Math.sin(t * 0.9) * 0.28;
+          const squeeze = Math.cos(rot);
+
+          ctx.strokeStyle = "#DAF1DE";
+          ctx.fillStyle = "rgba(35, 83, 71, 0.45)";
+          ctx.lineWidth = 2.5;
+
+          ctx.beginPath();
+          // Collar & Shoulders
+          ctx.moveTo(-45 * scale * squeeze, -145 * scale);
+          ctx.lineTo(-135 * scale * squeeze, -105 * scale);
+          // Left Sleeve
+          ctx.lineTo(-175 * scale * squeeze, -20 * scale);
+          ctx.lineTo(-115 * scale * squeeze, 5 * scale);
+          ctx.lineTo(-90 * scale * squeeze, -55 * scale);
+          // Left Torso
+          ctx.lineTo(-85 * scale * squeeze, 145 * scale);
+          // Bottom Hem
+          ctx.lineTo(85 * scale * squeeze, 145 * scale);
+          // Right Torso
+          ctx.lineTo(90 * scale * squeeze, -55 * scale);
+          // Right Sleeve
+          ctx.lineTo(115 * scale * squeeze, 5 * scale);
+          ctx.lineTo(175 * scale * squeeze, -20 * scale);
+          ctx.lineTo(135 * scale * squeeze, -105 * scale);
+          ctx.lineTo(45 * scale * squeeze, -145 * scale);
+          // Neckline curve
+          ctx.quadraticCurveTo(
+            0,
+            -110 * scale,
+            -45 * scale * squeeze,
+            -145 * scale,
+          );
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          // Internal 3D Mesh Contour Lines on Garment
+          ctx.strokeStyle = "rgba(142, 182, 155, 0.55)";
+          ctx.lineWidth = 1;
+          for (let y = -100; y <= 120; y += 28) {
+            ctx.beginPath();
+            ctx.moveTo(-82 * scale * squeeze, y * scale);
+            ctx.quadraticCurveTo(
+              0,
+              (y + 12) * scale,
+              82 * scale * squeeze,
+              y * scale,
+            );
+            ctx.stroke();
+          }
+
+          // Vertical Laser Spec Scanner Beam Sweeping Up & Down
+          const scanY = Math.sin(t * 1.8) * 145 * scale;
+          const laserGrad = ctx.createLinearGradient(
+            -220 * scale,
+            scanY,
+            220 * scale,
+            scanY,
+          );
+          laserGrad.addColorStop(0, "transparent");
+          laserGrad.addColorStop(0.5, "#DAF1DE");
+          laserGrad.addColorStop(1, "transparent");
+          ctx.strokeStyle = laserGrad;
+          ctx.lineWidth = 3.5;
+          ctx.beginPath();
+          ctx.moveTo(-210 * scale, scanY);
+          ctx.lineTo(210 * scale, scanY);
+          ctx.stroke();
+
+          // Floating CAD Callout Nodes
+          ctx.fillStyle = "#DAF1DE";
+          ctx.font = 'bold 12px "JetBrains Mono", monospace';
+          ctx.fillText("● CHEST TOLERANCE: ±0.2mm", 125 * scale, -85 * scale);
+          ctx.fillText("● FABRIC: 160 GSM DRY-FIT", 125 * scale, -10 * scale);
+          ctx.fillText("● ORDER QTY: 15,000 PCS", 125 * scale, 65 * scale);
+          ctx.fillText("● 3D CLO FIT: APPROVED", -265 * scale, -45 * scale);
+
+          ctx.restore();
+        },
+
+        // SCENE 02: STITCHING (High-Speed CNC Laser Cutting + 4-Needle Flatlock Seam)
+        drawScene02Stitching(ctx, w, h, t) {
+          const cx = w * 0.55;
+          const cy = h * 0.48;
+
+          ctx.save();
+          // Moving Textile Micro-Mesh Fabric Sheet
+          const shiftX = (this.cinemaFrame * 3.5) % 40;
+          ctx.strokeStyle = "rgba(142, 182, 155, 0.25)";
+          ctx.lineWidth = 1.5;
+          for (let x = cx - 340 + shiftX; x < cx + 340; x += 20) {
+            ctx.beginPath();
+            ctx.moveTo(x, cy - 160);
+            ctx.lineTo(x - 40, cy + 160);
+            ctx.stroke();
+          }
+
+          // Stitched Flatlock Seam Track Forming Across Screen
+          ctx.strokeStyle = "#8EB69B";
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          for (let x = cx - 320; x < cx + 280; x += 16) {
+            const waveY = cy + Math.sin((x + this.cinemaFrame * 4) * 0.04) * 18;
+            ctx.moveTo(x, waveY - 12);
+            ctx.lineTo(x + 8, waveY + 12);
+            ctx.lineTo(x + 16, waveY - 12);
+          }
+          ctx.stroke();
+
+          // High-Speed CNC Laser Cutter Head & Reciprocating Needle Assembly
+          const headX = cx + Math.sin(t * 1.6) * 190;
+          const headY =
+            cy + Math.sin((headX + this.cinemaFrame * 4) * 0.04) * 18;
+
+          // Overhead Gantry Bar
+          ctx.fillStyle = "#163832";
+          ctx.strokeStyle = "#DAF1DE";
+          ctx.lineWidth = 2;
+          ctx.fillRect(cx - 350, cy - 190, 700, 22);
+          ctx.strokeRect(cx - 350, cy - 190, 700, 22);
+
+          // Moving Laser / Sewing Head Carriage
+          ctx.fillStyle = "#235347";
+          ctx.fillRect(headX - 28, cy - 175, 56, 75);
+          ctx.strokeRect(headX - 28, cy - 175, 56, 75);
+
+          // Intense Laser Cutting Beam hitting the fabric
+          ctx.strokeStyle = "#DAF1DE";
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.moveTo(headX, cy - 100);
+          ctx.lineTo(headX, headY);
+          ctx.stroke();
+
+          // Glowing Laser Sparks at Contact Point
+          for (let i = 0; i < 10; i++) {
+            const ang = (t * 8 + i * 0.7) % (Math.PI * 2);
+            const dist = (this.cinemaFrame * 2 + i * 7) % 45;
+            const sx = headX + Math.cos(ang) * dist;
+            const sy = headY + Math.sin(ang) * dist;
+            ctx.fillStyle = "#DAF1DE";
+            ctx.beginPath();
+            ctx.arc(sx, sy, 2.5, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.fillStyle = "#DAF1DE";
+          ctx.font = 'bold 12px "JetBrains Mono", monospace';
+          ctx.fillText(
+            "CNC LASER & JUKI 4-NEEDLE FLATLOCK • 4,500 RPM",
+            cx - 180,
+            cy - 205,
+          );
+          ctx.restore();
+        },
+
+        // SCENE 03: PACKING (Moving Conveyor Belt + SGS AQL 1.5 Metal Detector & Barcode Gate)
+        drawScene03Packing(ctx, w, h, t) {
+          const cx = w * 0.56;
+          const cy = h * 0.52;
+
+          ctx.save();
+          // Conveyor Track
+          ctx.strokeStyle = "#8EB69B";
+          ctx.fillStyle = "rgba(11, 43, 38, 0.85)";
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(cx - 380, cy + 50);
+          ctx.lineTo(cx + 380, cy - 30);
+          ctx.lineTo(cx + 380, cy + 40);
+          ctx.lineTo(cx - 380, cy + 120);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          // Moving Export Cartons / Polybags on Conveyor
+          const speed = (this.cinemaFrame * 2.4) % 190;
+          for (let i = -2; i <= 2; i++) {
+            const progress = i * 190 + speed - 50;
+            const bx = cx + progress;
+            const by = cy + 20 - progress * 0.1;
+            const isScanned = bx > cx;
+
+            // Carton Box
+            ctx.fillStyle = isScanned ? "#235347" : "#163832";
+            ctx.strokeStyle = isScanned ? "#DAF1DE" : "#8EB69B";
+            ctx.lineWidth = 2;
+            ctx.fillRect(bx - 42, by - 55, 84, 55);
+            ctx.strokeRect(bx - 42, by - 55, 84, 55);
+
+            // Barcode & Status Label on Carton
+            ctx.fillStyle = "#DAF1DE";
+            ctx.font = 'bold 10px "JetBrains Mono", monospace';
+            ctx.fillText(
+              isScanned ? "✓ AQL 1.5" : "SCANNING",
+              bx - 32,
+              by - 30,
+            );
+            ctx.fillText("ZTi-3PL", bx - 25, by - 12);
+          }
+
+          // Central SGS Metal Detector & Barcode Scanner Arch
+          ctx.fillStyle = "rgba(22, 56, 50, 0.92)";
+          ctx.strokeStyle = "#DAF1DE";
+          ctx.lineWidth = 3;
+          ctx.fillRect(cx - 35, cy - 140, 70, 195);
+          ctx.strokeRect(cx - 35, cy - 140, 70, 195);
+
+          // Pulsing Laser Barcode Scan Curtain inside Arch
+          const scanAlpha = 0.4 + Math.abs(Math.sin(t * 3)) * 0.5;
+          ctx.fillStyle = `rgba(218, 241, 222, ${scanAlpha})`;
+          ctx.fillRect(cx - 30, cy - 60, 60, 4);
+
+          ctx.fillStyle = "#DAF1DE";
+          ctx.font = 'bold 11px "JetBrains Mono", monospace';
+          ctx.fillText("SGS AQL 1.5 GATE", cx - 55, cy - 155);
+          ctx.restore();
+        },
+
+        // SCENE 04: SHIPPING (Ningbo Port Gantry Crane + COSCO Container Ship + Ocean Waves)
+        drawScene04Shipping(ctx, w, h, t) {
+          const cx = w * 0.56;
+          const horizonY = h * 0.58;
+
+          ctx.save();
+
+          // Satellite Trade Arcs in Sky
+          ctx.strokeStyle = "rgba(218, 241, 222, 0.3)";
+          ctx.setLineDash([6, 6]);
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(cx, horizonY + 120, 320, Math.PI * 1.15, Math.PI * 1.85);
+          ctx.stroke();
+          ctx.setLineDash([]);
+
+          // Cargo Ship Hull (COSCO ZTi TAURUS)
+          const shipBob = Math.sin(t * 1.5) * 4;
+          ctx.fillStyle = "#0B2B26";
+          ctx.strokeStyle = "#DAF1DE";
+          ctx.lineWidth = 2.5;
+          ctx.beginPath();
+          ctx.moveTo(cx - 290, horizonY - 15 + shipBob);
+          ctx.lineTo(cx + 290, horizonY - 15 + shipBob);
+          ctx.lineTo(cx + 245, horizonY + 45 + shipBob);
+          ctx.lineTo(cx - 255, horizonY + 45 + shipBob);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          // Ship Bridge Tower
+          ctx.fillStyle = "#163832";
+          ctx.fillRect(cx - 220, horizonY - 95 + shipBob, 55, 80);
+          ctx.strokeRect(cx - 220, horizonY - 95 + shipBob, 55, 80);
+
+          // Stacked 40HQ Containers on Deck
+          for (let col = -1; col <= 2; col++) {
+            for (let row = 0; row < 2; row++) {
+              const contX = cx - 90 + col * 85;
+              const contY = horizonY - 48 - row * 32 + shipBob;
+              ctx.fillStyle = (col + row) % 2 === 0 ? "#235347" : "#163832";
+              ctx.strokeStyle = "#8EB69B";
+              ctx.fillRect(contX, contY, 78, 28);
+              ctx.strokeRect(contX, contY, 78, 28);
+              ctx.fillStyle = "#DAF1DE";
+              ctx.font = 'bold 9px "JetBrains Mono", monospace';
+              ctx.fillText("ZTi 40HQ", contX + 14, contY + 17);
+            }
+          }
+
+          // Gantry Crane Lowering a Container onto the Ship
+          const craneY = horizonY - 155 + Math.sin(t * 1.8) * 28;
+          ctx.strokeStyle = "#DAF1DE";
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(cx + 120, horizonY - 240);
+          ctx.lineTo(cx + 120, craneY);
+          ctx.stroke();
+
+          ctx.fillStyle = "#8EB69B";
+          ctx.fillRect(cx + 80, craneY, 80, 30);
+          ctx.fillStyle = "#051F20";
+          ctx.font = 'bold 10px "JetBrains Mono", monospace';
+          ctx.fillText("ZTi EXPORT", cx + 90, craneY + 19);
+
+          // Animated Multi-Layered Ocean Waves
+          for (let layer = 0; layer < 3; layer++) {
+            ctx.fillStyle =
+              layer === 0
+                ? "rgba(22, 56, 50, 0.7)"
+                : layer === 1
+                  ? "rgba(11, 43, 38, 0.85)"
+                  : "#051F20";
+            ctx.beginPath();
+            ctx.moveTo(0, h);
+            for (let x = 0; x <= w; x += 30) {
+              const wy =
+                horizonY +
+                25 +
+                layer * 22 +
+                Math.sin(x * 0.015 + t * (2 + layer)) * 9;
+              ctx.lineTo(x, wy);
+            }
+            ctx.lineTo(w, h);
+            ctx.closePath();
+            ctx.fill();
+          }
+
+          ctx.fillStyle = "#DAF1DE";
+          ctx.font = 'bold 12px "JetBrains Mono", monospace';
+          ctx.fillText(
+            "VESSEL: COSCO ZTi TAURUS • NINGBO PORT → GLOBAL",
+            cx - 190,
+            horizonY + 85,
+          );
+          ctx.restore();
+        },
+
+        // Toggle Full-Screen Theater Mode (Hides Foreground Text so User Can Watch Pure Video)
+        toggleTheaterMode() {
+          this.theaterMode = !this.theaterMode;
+          const ui = document.getElementById("hero-foreground-ui");
+          const vignette = document.getElementById("hero-vignette-overlay");
+          const lbl = document.getElementById("label-theater-mode");
+
+          if (this.theaterMode) {
+            ui.classList.add("opacity-0", "pointer-events-none");
+            vignette.classList.add("opacity-0");
+            if (lbl)
+              lbl.innerText = "Cinema Only Mode: ON (Click to Restore UI)";
+            this.toast(
+              "Full-Screen Cinema Mode Activated — Watching 4-Stage Production Film",
+            );
+          } else {
+            ui.classList.remove("opacity-0", "pointer-events-none");
+            vignette.classList.remove("opacity-0");
+            if (lbl) lbl.innerText = "Cinema Only Mode: OFF";
+          }
+        },
+
+        // Optional Local MP4 Loader if user wants to drop their own video file
+        loadUserMp4(input) {
+          const file = input.files && input.files[0];
+          if (!file) return;
+          const url = URL.createObjectURL(file);
+          const vid = document.getElementById("custom-user-video");
+          if (vid) {
+            vid.src = url;
+            vid.classList.remove("hidden");
+            vid.play().catch(() => {});
+            this.toast(`Loaded custom video: ${file.name}`);
+          }
+        },
+
+        // =================================================================
+        // GOOGLE FLOW 4-STAGE STORYBOARD SEQUENCER & TRANSITION CONTROLLER
+        // =================================================================
+        startFlowStoryboardCycle(stageIndex = 0) {
+          this.transitionToFlowStage(stageIndex, false);
+        },
+
+        transitionToFlowStage(stageIdx, manualClick = false) {
+          const stage = this.flowStages[stageIdx];
+          if (!stage) return;
+          this.activeFlowStage = stageIdx;
+
+          // 1. Flash Anamorphic Lens-Flare Transition Veil
+          const veil = document.getElementById("flow-transition-veil");
+          if (veil) {
+            gsap.fromTo(
+              veil,
+              { opacity: 0, backgroundPosition: "0% 50%" },
+              {
+                opacity: 0.9,
+                backgroundPosition: "100% 50%",
+                duration: 0.35,
+                yoyo: true,
+                repeat: 1,
+                ease: "power2.inOut",
+              },
+            );
+          }
+
+          // 2. Update Top-Left Cinema HUD & Telemetry Card
+          const hudTag = document.getElementById("cinema-hud-tag");
+          if (hudTag) hudTag.innerText = stage.hudTag;
+
+          const card = document.getElementById("flow-telemetry-card");
+          if (card) {
+            gsap.fromTo(
+              card,
+              { y: 10, opacity: 0.7 },
+              { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" },
+            );
+          }
+
+          document.getElementById("flow-active-pill").innerText = stage.pill;
+          document.getElementById("flow-card-stage").innerText = stage.stageTag;
+          document.getElementById("flow-card-title").innerText = stage.title;
+          document.getElementById("flow-card-desc").innerText = stage.desc;
+          document.getElementById("flow-card-icon").innerHTML =
+            `<i class="ph-duotone ${stage.icon} text-2xl text-zti-c6"></i>`;
+
+          document.getElementById("flow-m1-label").innerText = stage.m1Label;
+          document.getElementById("flow-m1-val").innerText = stage.m1Val;
+          document.getElementById("flow-m1-bar").style.width = stage.m1Pct;
+
+          document.getElementById("flow-m2-label").innerText = stage.m2Label;
+          document.getElementById("flow-m2-val").innerText = stage.m2Val;
+          document.getElementById("flow-m2-bar").style.width = stage.m2Pct;
+
+          document.getElementById("flow-stat-1").innerText = stage.s1;
+          document.getElementById("flow-stat-1-lbl").innerText = stage.s1Lbl;
+          document.getElementById("flow-stat-2").innerText = stage.s2;
+          document.getElementById("flow-stat-2-lbl").innerText = stage.s2Lbl;
+          document.getElementById("flow-stat-3").innerText = stage.s3;
+          document.getElementById("flow-stat-3-lbl").innerText = stage.s3Lbl;
+
+          // 3. Highlight Active Stage Card & Run 7-Second Progress Bar
+          document.querySelectorAll(".flow-stage-card").forEach((btn, idx) => {
+            const bar = document.getElementById(`flow-prog-${idx}`);
+            gsap.killTweensOf(bar);
+            if (idx === stageIdx) {
+              btn.className =
+                "flow-stage-card text-left p-3.5 rounded-xl bg-zti-c3/95 border-2 border-zti-c6 transition relative overflow-hidden group shadow-xl";
+              if (bar) {
+                bar.style.width = "0%";
+                if (this.flowAutoplay) {
+                  this.flowProgressTween = gsap.to(bar, {
+                    width: "100%",
+                    duration: 7,
+                    ease: "none",
+                    onComplete: () => {
+                      if (this.flowAutoplay) {
+                        const nextIdx =
+                          (this.activeFlowStage + 1) % this.flowStages.length;
+                        this.transitionToFlowStage(nextIdx, false);
+                      }
+                    },
+                  });
+                } else {
+                  bar.style.width = "100%";
+                }
+              }
+            } else {
+              btn.className =
+                "flow-stage-card text-left p-3.5 rounded-xl bg-zti-c1/75 border border-zti-c4 hover:border-zti-c5 transition relative overflow-hidden group";
+              if (bar) bar.style.width = idx < stageIdx ? "100%" : "0%";
+            }
+          });
+
+          if (manualClick) {
+            this.toast(`Switched Background Film → ${stage.stageTag}`);
+          }
+        },
+
+        toggleFlowAutoplay() {
+          this.flowAutoplay = !this.flowAutoplay;
+          const icon = document.getElementById("icon-flow-pause");
+          const label = document.getElementById("label-flow-pause");
+          if (this.flowAutoplay) {
+            icon.className = "ph-fill ph-pause";
+            label.innerText = "Auto-Transition: ON";
+            this.transitionToFlowStage(this.activeFlowStage, false);
+          } else {
+            icon.className = "ph-fill ph-play";
+            label.innerText = "Auto-Transition: PAUSED";
+            if (this.flowProgressTween) this.flowProgressTween.pause();
+          }
+        },
+
+        // Strict Role-Based Navigation Guard
+        navigate(viewId) {
+          if (viewId === "portal") {
+            if (!this.authUser) {
+              this.toast(
+                "Please sign in to access your Client Sourcing Portal.",
+              );
+              this.openAuthModal("login");
+              return;
+            }
+          }
+
+          if (viewId === "admin") {
+            if (!this.authUser) {
+              this.toast(
+                "Owner authentication required for ERP Command Center.",
+              );
+              this.openAuthModal("login");
+              return;
+            }
+            if (this.authUser.role !== "owner") {
+              this.toast(
+                "ACCESS DENIED: Customer accounts cannot view the Owner Admin ERP.",
+              );
+              return;
+            }
+          }
+
+          document
+            .querySelectorAll(".view-pane")
+            .forEach((el) => el.classList.add("hidden"));
+          const target = document.getElementById(`view-${viewId}`);
+          if (target) {
+            target.classList.remove("hidden");
+            gsap.fromTo(
+              target,
+              { opacity: 0, y: 22 },
+              { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+            );
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+
+          document.querySelectorAll(".nav-btn").forEach((btn) => {
+            if (btn.getAttribute("data-view") === viewId) {
+              btn.classList.add("text-zti-c6", "border-zti-c6", "font-bold");
+              btn.classList.remove("text-zti-c5", "border-transparent");
+            } else {
+              btn.classList.remove("text-zti-c6", "border-zti-c6", "font-bold");
+              btn.classList.add("text-zti-c5", "border-transparent");
+            }
+          });
+
+          if (viewId === "portal")
+            setTimeout(() => this.animateClientPortal(), 60);
+          if (viewId === "admin") setTimeout(() => this.animateOwnerErp(), 60);
+        },
+
+        openAuthModal(tab = "login") {
+          document.getElementById("auth-modal").classList.remove("hidden");
+          this.switchAuthTab(tab);
+        },
+
+        closeAuthModal() {
+          document.getElementById("auth-modal").classList.add("hidden");
+        },
+
+        switchAuthTab(tab) {
+          ["login", "signup", "forgot"].forEach((t) => {
+            document
+              .getElementById(`form-auth-${t}`)
+              .classList.toggle("hidden", t !== tab);
+            const btn = document.getElementById(`auth-tab-${t}`);
+            btn.className =
+              t === tab
+                ? "py-2 rounded-lg bg-zti-c6 text-zti-c1 font-bold transition"
+                : "py-2 rounded-lg text-zti-c5 hover:text-zti-c6 transition";
+          });
+        },
+
+        fillDemoAuth(role) {
+          const select = document.getElementById("login-role-select");
+          const email = document.getElementById("login-email");
+          const pass = document.getElementById("login-pass");
+          select.value = role;
+          if (role === "owner") {
+            email.value = "owner@ztiexport.com";
+            pass.value = "OwnerERP2026!";
+          } else {
+            email.value = "buyer@apexathletics.com";
+            pass.value = "Buyer2026!";
+          }
+        },
+
+        handleLogin(e) {
+          e.preventDefault();
+          const role = document.getElementById("login-role-select").value;
+          const email = document.getElementById("login-email").value;
+
+          this.authUser = {
+            role,
+            email,
+            company:
+              role === "owner"
+                ? "ZTi Executive Holding (Owner)"
+                : "Apex Athletics LLC (Verified Buyer)",
+          };
+
+          this.updateNavbarAuthUI();
+          this.closeAuthModal();
+
+          if (role === "owner") {
+            this.toast(
+              "Welcome Mr. Owner.",
+            );
+            this.navigate("admin");
+          } else {
+            this.toast("Welcome Buyers");
+            this.navigate("portal");
+          }
+        },
+
+        handleSignup(e) {
+          e.preventDefault();
+          const company = document.getElementById("signup-company").value;
+          const email = document.getElementById("signup-email").value;
+
+          this.authUser = {
+            role: "buyer",
+            email,
+            company: `${company} (Client Portal)`,
+          };
+
+          this.updateNavbarAuthUI();
+          this.closeAuthModal();
+          this.toast(`Corporate Buyer Account created for ${company}.`);
+          this.navigate("portal");
+        },
+
+        handleForgot(e) {
+          e.preventDefault();
+          this.closeAuthModal();
+          this.toast(
+            "Encrypted 2FA recovery token dispatched to your corporate email.",
+          );
+        },
+
+        logout() {
+          this.authUser = null;
+          this.updateNavbarAuthUI();
+          this.toast("Signed out safely. Dashboards locked.");
+          this.navigate("home");
+        },
+
+        updateNavbarAuthUI() {
+          const btnOpenAuth = document.getElementById("btn-open-auth");
+          const toolbar = document.getElementById("logged-in-toolbar");
+          const badge = document.getElementById("role-badge-pill");
+          const btnOwnerErp = document.getElementById("btn-owner-erp");
+          const welcomeTitle = document.getElementById("portal-welcome-title");
+
+          if (!this.authUser) {
+            btnOpenAuth.classList.remove("hidden");
+            toolbar.classList.add("hidden");
+            toolbar.classList.remove("flex");
+            btnOwnerErp.classList.add("hidden");
+            return;
+          }
+
+          btnOpenAuth.classList.add("hidden");
+          toolbar.classList.remove("hidden");
+          toolbar.classList.add("flex");
+
+          if (welcomeTitle) welcomeTitle.innerText = `${this.authUser.company}`;
+
+          if (this.authUser.role === "owner") {
+            badge.innerText = "● OWNER ROOT ACCESS";
+            btnOwnerErp.classList.remove("hidden");
+          } else {
+            badge.innerText = "● VERIFIED BUYER";
+            btnOwnerErp.classList.add("hidden");
+          }
+        },
+
+        animateClientPortal() {
+          gsap.fromTo(
+            ".portal-anim-item",
+            { opacity: 0, y: 28, scale: 0.97 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.55,
+              stagger: 0.1,
+              ease: "back.out(1.2)",
+            },
+          );
+
+          document.querySelectorAll(".portal-bar").forEach((bar) => {
+            const targetW = bar.getAttribute("data-width") || "100%";
+            gsap.fromTo(
+              bar,
+              { width: "0%" },
+              { width: targetW, duration: 1.3, ease: "power3.out" },
+            );
+          });
+
+          const ctx = document
+            .getElementById("chart-client-portal")
+            ?.getContext("2d");
+          if (ctx) {
+            if (this.clientChart) this.clientChart.destroy();
+            this.clientChart = new Chart(ctx, {
+              type: "line",
+              data: {
+                labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+                datasets: [
+                  {
+                    label: "Ordered Units",
+                    data: [4200, 6800, 9500, 11200, 13400, 15000],
+                    borderColor: "#DAF1DE",
+                    backgroundColor: "rgba(142, 182, 155, 0.22)",
+                    borderWidth: 2.5,
+                    tension: 0.4,
+                    fill: true,
+                    pointBackgroundColor: "#8EB69B",
+                    pointRadius: 4,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: { duration: 1600, easing: "easeOutQuart" },
+                scales: {
+                  y: {
+                    ticks: {
+                      color: "#8EB69B",
+                      font: { family: "JetBrains Mono", size: 10 },
+                    },
+                    grid: { color: "rgba(142, 182, 155, 0.15)" },
+                  },
+                  x: {
+                    ticks: {
+                      color: "#8EB69B",
+                      font: { family: "JetBrains Mono", size: 10 },
+                    },
+                    grid: { display: false },
+                  },
+                },
+                plugins: { legend: { display: false } },
+              },
+            });
+          }
+        },
+
+        animateOwnerErp() {
+          gsap.fromTo(
+            ".erp-card-anim",
+            { opacity: 0, y: 30, scale: 0.96 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.55,
+              stagger: 0.08,
+              ease: "power3.out",
+            },
+          );
+
+          gsap.fromTo(
+            ".erp-report-row",
+            { opacity: 0, x: -25 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.5,
+              stagger: 0.12,
+              delay: 0.25,
+              ease: "power2.out",
+            },
+          );
+
+          document.querySelectorAll(".erp-prog-bar").forEach((bar) => {
+            const w = bar.getAttribute("data-w") || "85%";
+            gsap.fromTo(
+              bar,
+              { width: "0%" },
+              { width: w, duration: 1.4, ease: "expo.out" },
+            );
+          });
+
+          this.renderAllErpCharts();
+        },
+
+        triggerErpReportAnimation() {
+          this.animateOwnerErp();
+          this.toast(
+            "Re-synced & animated all live factory charts and ledger reports.",
+          );
+        },
+
+        renderAllErpCharts() {
+          Object.values(this.erpCharts).forEach((c) => c && c.destroy());
+
+          const ctxRev = document
+            .getElementById("chart-erp-revenue")
+            ?.getContext("2d");
+          if (ctxRev) {
+            this.erpCharts.rev = new Chart(ctxRev, {
+              type: "line",
+              data: {
+                labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+                datasets: [
+                  {
+                    label: "Export Revenue ($K)",
+                    data: [2450, 2780, 3020, 3190, 3410, 3570],
+                    borderColor: "#DAF1DE",
+                    backgroundColor: "rgba(218, 241, 222, 0.18)",
+                    borderWidth: 2.5,
+                    tension: 0.4,
+                    fill: true,
+                  },
+                  {
+                    label: "Net Profit ($K)",
+                    data: [540, 620, 690, 730, 780, 820],
+                    borderColor: "#8EB69B",
+                    backgroundColor: "rgba(142, 182, 155, 0.12)",
+                    borderWidth: 2,
+                    borderDash: [4, 4],
+                    tension: 0.4,
+                    fill: true,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: { duration: 1800, easing: "easeOutElastic" },
+                scales: {
+                  y: {
+                    ticks: {
+                      color: "#8EB69B",
+                      font: { family: "JetBrains Mono", size: 10 },
+                    },
+                    grid: { color: "rgba(142, 182, 155, 0.12)" },
+                  },
+                  x: {
+                    ticks: {
+                      color: "#8EB69B",
+                      font: { family: "JetBrains Mono", size: 10 },
+                    },
+                    grid: { display: false },
+                  },
+                },
+                plugins: {
+                  legend: {
+                    labels: {
+                      color: "#DAF1DE",
+                      font: { family: "JetBrains Mono", size: 10 },
+                    },
+                  },
+                },
+              },
+            });
+          }
+
+          const ctxReg = document
+            .getElementById("chart-erp-regions")
+            ?.getContext("2d");
+          if (ctxReg) {
+            this.erpCharts.reg = new Chart(ctxReg, {
+              type: "doughnut",
+              data: {
+                labels: [
+                  "North America (42%)",
+                  "European Union (31%)",
+                  "GCC / MENA (15%)",
+                  "Asia-Pacific (12%)",
+                ],
+                datasets: [
+                  {
+                    data: [42, 31, 15, 12],
+                    backgroundColor: [
+                      "#DAF1DE",
+                      "#8EB69B",
+                      "#235347",
+                      "#163832",
+                    ],
+                    borderColor: "#051F20",
+                    borderWidth: 3,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                  animateScale: true,
+                  animateRotate: true,
+                  duration: 1600,
+                },
+                plugins: {
+                  legend: {
+                    position: "bottom",
+                    labels: {
+                      color: "#DAF1DE",
+                      font: { family: "JetBrains Mono", size: 10 },
+                    },
+                  },
+                },
+              },
+            });
+          }
+
+          const ctxCat = document
+            .getElementById("chart-erp-categories")
+            ?.getContext("2d");
+          if (ctxCat) {
+            this.erpCharts.cat = new Chart(ctxCat, {
+              type: "bar",
+              data: {
+                labels: [
+                  "Dry-Fit Tees",
+                  "Seamless Leggings",
+                  "450G Hoodies",
+                  "Team Jerseys",
+                  "Tracksuits",
+                ],
+                datasets: [
+                  {
+                    label: "Monthly Output (K Units)",
+                    data: [680, 520, 310, 260, 170],
+                    backgroundColor: [
+                      "#DAF1DE",
+                      "#8EB69B",
+                      "#8EB69B",
+                      "#235347",
+                      "#235347",
+                    ],
+                    borderRadius: 8,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: { duration: 1500, easing: "easeOutBounce" },
+                scales: {
+                  y: {
+                    ticks: {
+                      color: "#8EB69B",
+                      font: { family: "JetBrains Mono", size: 10 },
+                    },
+                    grid: { color: "rgba(142, 182, 155, 0.12)" },
+                  },
+                  x: {
+                    ticks: {
+                      color: "#8EB69B",
+                      font: { family: "JetBrains Mono", size: 10 },
+                    },
+                    grid: { display: false },
+                  },
+                },
+                plugins: { legend: { display: false } },
+              },
+            });
+          }
+
+          const ctxRad = document
+            .getElementById("chart-erp-radar")
+            ?.getContext("2d");
+          if (ctxRad) {
+            this.erpCharts.rad = new Chart(ctxRad, {
+              type: "radar",
+              data: {
+                labels: [
+                  "AQL 1.5 Pass",
+                  "On-Time Vessel",
+                  "Marker Efficiency",
+                  "3D Sample Speed",
+                  "Dye Delta-E",
+                  "Line Uptime",
+                ],
+                datasets: [
+                  {
+                    label: "ZTi Smart Plants Benchmark (%)",
+                    data: [99.6, 98.2, 89.4, 97.0, 99.1, 98.4],
+                    backgroundColor: "rgba(142, 182, 155, 0.28)",
+                    borderColor: "#DAF1DE",
+                    pointBackgroundColor: "#DAF1DE",
+                    borderWidth: 2,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: { duration: 1700 },
+                scales: {
+                  r: {
+                    angleLines: { color: "rgba(142, 182, 155, 0.2)" },
+                    grid: { color: "rgba(142, 182, 155, 0.2)" },
+                    pointLabels: {
+                      color: "#DAF1DE",
+                      font: { family: "JetBrains Mono", size: 9 },
+                    },
+                    ticks: { display: false, min: 70, max: 100 },
+                  },
+                },
+                plugins: { legend: { display: false } },
+              },
+            });
+          }
+        },
+
+        switchErpTab(key) {
+          document.querySelectorAll(".erp-tab-btn").forEach((btn) => {
+            if (btn.getAttribute("data-erp") === key) {
+              btn.className =
+                "erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl bg-zti-c6 text-zti-c1 font-bold transition";
+            } else {
+              btn.className =
+                "erp-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-zti-c5 hover:text-zti-c6 transition";
+            }
+          });
+
+          const execPane = document.getElementById("erp-pane-executive");
+          const dynPane = document.getElementById("erp-pane-dynamic");
+
+          if (key === "executive") {
+            execPane.classList.remove("hidden");
+            dynPane.classList.add("hidden");
+            this.animateOwnerErp();
+          } else {
+            execPane.classList.add("hidden");
+            dynPane.classList.remove("hidden");
+            const mod = this.erpModulesData[key];
+            if (mod) {
+              document.getElementById("erp-dyn-title").innerText = mod.title;
+              document.getElementById("erp-dyn-desc").innerText = mod.desc;
+              document.getElementById("erp-dyn-metrics").innerHTML = mod.metrics
+                .map(
+                  (m) => `
+              <div class="p-5 rounded-2xl bg-zti-c1/80 border border-zti-c4 space-y-2 dyn-anim-card">
+                <div class="text-[10px] text-zti-c5">${m.label}</div>
+                <div class="text-xl font-bold text-zti-c6">${m.val}</div>
+                <div class="w-full h-1.5 bg-zti-c2 rounded-full overflow-hidden">
+                  <div class="dyn-prog-bar h-full bg-zti-c5 rounded-full" data-w="${m.pct}"></div>
+                </div>
+              </div>
+            `,
+                )
+                .join("");
+
+              document.getElementById("erp-dyn-table").innerHTML = mod.rows
+                .map(
+                  (r) => `
+              <div class="p-4 rounded-xl bg-zti-c1/90 border border-zti-c4 flex justify-between items-center dyn-anim-row">
+                <span class="text-zti-c6">${r}</span>
+                <span class="px-2.5 py-1 rounded bg-zti-c3 border border-zti-c5/40 text-zti-c6 text-[10px]">LIVE SYNC</span>
+              </div>
+            `,
+                )
+                .join("");
+
+              this.animateDynamicModule();
+            }
+          }
+        },
+
+        animateDynamicModule() {
+          gsap.fromTo(
+            ".dyn-anim-card",
+            { opacity: 0, y: 20 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.45,
+              stagger: 0.08,
+              ease: "power2.out",
+            },
+          );
+          gsap.fromTo(
+            ".dyn-anim-row",
+            { opacity: 0, x: -20 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.45,
+              stagger: 0.1,
+              delay: 0.15,
+              ease: "power2.out",
+            },
+          );
+          document.querySelectorAll(".dyn-prog-bar").forEach((b) => {
+            gsap.fromTo(
+              b,
+              { width: "0%" },
+              {
+                width: b.getAttribute("data-w"),
+                duration: 1.2,
+                ease: "expo.out",
+              },
+            );
+          });
+        },
+
+        renderHomeShowcase() {
+          const track = document.getElementById("home-showcase-slider");
+          if (!track) return;
+          track.innerHTML = this.products
+            .map(
+              (p) => `
+          <div class="glass-card shimmer-sweep rounded-2xl p-5 w-[320px] sm:w-[350px] shrink-0 snap-start flex flex-col justify-between group">
+            <div>
+              <div class="relative h-52 rounded-xl overflow-hidden mb-4 bg-zti-c1">
+                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90">
+                <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-zti-c1/90 border border-zti-c4 text-[10px] font-mono text-zti-c6">${p.id}</span>
+                <span class="absolute top-3 right-3 px-2.5 py-1 rounded bg-zti-c6 text-zti-c1 text-[10px] font-mono font-bold">${p.gsm} GSM</span>
+              </div>
+              <div class="text-[10px] font-mono text-zti-c5 uppercase">${p.subCategory}</div>
+              <h3 class="text-base font-bold text-zti-c6 mt-0.5">${p.name}</h3>
+              <p class="text-xs text-zti-c5 mt-1 line-clamp-2">${p.composition}</p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-zti-c4 flex items-center justify-between">
+              <div class="font-mono">
+                <span class="text-[10px] text-zti-c5 block">BULK FOB FROM</span>
+                <span class="text-lg font-black text-zti-c6">${this.formatMoney(p.basePriceUSD)}</span>
+              </div>
+              <button onclick="ZTi.openSpecModal('${p.id}')" class="px-4 py-2 rounded-xl btn-mint text-xs">Costing →</button>
+            </div>
+          </div>
+        `,
+            )
+            .join("");
+        },
+
+        slideShowcase(dir) {
+          document
+            .getElementById("home-showcase-slider")
+            ?.scrollBy({ left: dir * 370, behavior: "smooth" });
+        },
+
+        setCurrency(curr) {
+          this.currency = curr;
+          this.renderCatalog();
+          this.renderHomeShowcase();
+          this.calculateCost();
+          this.toast(`Currency switched to ${curr}`);
+        },
+
+        formatMoney(usdAmount) {
+          const rate = this.rates[this.currency] || 1;
+          const sym = this.symbols[this.currency] || "$";
+          return `${sym}${(usdAmount * rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        },
+
+        renderCatalog(items = this.products) {
+          const grid = document.getElementById("catalog-grid");
+          if (!grid) return;
+          grid.innerHTML = items
+            .map(
+              (p) => `
+          <div class="glass-card shimmer-sweep rounded-2xl p-6 flex flex-col justify-between group" data-tilt data-tilt-max="6">
+            <div>
+              <div class="h-56 rounded-xl bg-zti-c1 relative overflow-hidden mb-5 border border-zti-c4">
+                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-90">
+                <span class="absolute top-3 left-3 bg-zti-c1/90 px-2.5 py-1 rounded border border-zti-c4 text-[10px] font-mono text-zti-c6">${p.id}</span>
+                <span class="absolute top-3 right-3 bg-zti-c6 px-2.5 py-1 rounded text-[10px] font-mono text-zti-c1 font-bold">${p.gsm} GSM</span>
+              </div>
+              <div class="space-y-3">
+                <div class="text-[10px] font-mono text-zti-c5 uppercase">${p.subCategory}</div>
+                <h3 class="font-bold text-zti-c6 text-lg">${p.name}</h3>
+                <p class="text-xs text-zti-c5">${p.composition}</p>
+                <div class="p-3.5 rounded-xl bg-zti-c1/80 border border-zti-c4 text-xs font-mono space-y-1">
+                  ${p.tiers
+                    .map(
+                      (t) => `
+                    <div class="flex justify-between">
+                      <span class="text-zti-c5">${t.qty.toLocaleString()}+ pcs</span>
+                      <span class="text-zti-c6 font-bold">${this.formatMoney(t.price)}</span>
+                    </div>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+            </div>
+            <div class="pt-5 mt-5 border-t border-zti-c4 flex gap-2.5">
+              <button onclick="ZTi.openSpecModal('${p.id}')" class="flex-1 py-3 rounded-xl btn-emerald-glass text-xs">FOB Calculator</button>
+              <button onclick="ZTi.navigate('rfq')" class="px-4 py-3 rounded-xl btn-mint text-xs">RFQ</button>
+            </div>
+          </div>
+        `,
+            )
+            .join("");
+        },
+
+        filterCatalog() {
+          const search = (
+            document.getElementById("catalog-search")?.value || ""
+          ).toLowerCase();
+          const cat =
+            document.getElementById("catalog-category-filter")?.value || "all";
+          const filtered = this.products.filter((item) => {
+            const matchSearch =
+              item.name.toLowerCase().includes(search) ||
+              item.composition.toLowerCase().includes(search) ||
+              item.id.toLowerCase().includes(search);
+            const matchCat = cat === "all" || item.category === cat;
+            return matchSearch && matchCat;
+          });
+          this.renderCatalog(filtered);
+        },
+
+        calculateCost() {
+          const category =
+            document.getElementById("calc-category")?.value || "tee";
+          const qty = parseInt(
+            document.getElementById("calc-qty-slider")?.value || 2500,
+          );
+          const incoterm =
+            document.getElementById("calc-incoterm")?.value || "fob";
+
+          const display = document.getElementById("calc-qty-display");
+          if (display) display.innerText = `${qty.toLocaleString()} PCS`;
+
+          let base = 4.2,
+            cbmPer1000 = 1.9;
+          if (category === "compression") {
+            base = 6.8;
+            cbmPer1000 = 1.6;
+          } else if (category === "hoodie") {
+            base = 12.5;
+            cbmPer1000 = 4.5;
+          } else if (category === "tracksuit") {
+            base = 15.2;
+            cbmPer1000 = 3.9;
+          }
+
+          let volDiscount =
+            qty >= 15000 ? 0.78 : qty >= 5000 ? 0.88 : qty >= 2500 ? 0.94 : 1.0;
+          let incotermMult =
+            incoterm === "cif" ? 1.08 : incoterm === "ddp" ? 1.21 : 1.0;
+
+          const unitCost = base * volDiscount * incotermMult;
+          const total = unitCost * qty;
+          const cbm = ((qty / 1000) * cbmPer1000).toFixed(1);
+
+          const resUnit = document.getElementById("calc-res-unit");
+          const resTotal = document.getElementById("calc-res-total");
+          const resCbm = document.getElementById("calc-res-cbm");
+
+          if (resUnit) resUnit.innerText = this.formatMoney(unitCost);
+          if (resTotal) resTotal.innerText = this.formatMoney(total);
+          if (resCbm)
+            resCbm.innerText = `${cbm} CBM (${cbm < 28 ? "20GP Container" : "40HQ Container"})`;
+        },
+
+        openSpecModal(productId) {
+          const p = this.products.find((item) => item.id === productId);
+          if (!p) return;
+          document.getElementById("modal-item-title").innerText = p.name;
+          document.getElementById("modal-item-sku").innerText =
+            `SKU: ${p.id} • ${p.gsm} GSM Specification`;
+          document.getElementById("modal-item-comp").innerText = p.composition;
+          document.getElementById("modal-item-moq").innerText =
+            `${p.moq} Units`;
+
+          const slider = document.getElementById("modal-item-qty-slider");
+          slider.min = p.moq;
+          slider.max = p.moq * 25;
+          slider.value = p.moq * 2;
+          slider.oninput = () => this.updateModalCalc(p);
+
+          this.updateModalCalc(p);
+          document.getElementById("spec-modal").classList.remove("hidden");
+        },
+
+        updateModalCalc(p) {
+          const qty = parseInt(
+            document.getElementById("modal-item-qty-slider").value,
+          );
+          document.getElementById("modal-item-qty-label").innerText =
+            `${qty.toLocaleString()} PCS`;
+          let unit =
+            qty >= 10000
+              ? p.basePriceUSD * 0.94
+              : qty >= 5000
+                ? p.basePriceUSD
+                : p.basePriceUSD * 1.08;
+          const total = unit * qty;
+          const cbm = (qty * 0.0019).toFixed(1);
+
+          document.getElementById("modal-item-unit-cost").innerText =
+            this.formatMoney(unit);
+          document.getElementById("modal-item-total-cost").innerText =
+            this.formatMoney(total);
+          document.getElementById("modal-item-cbm").innerText =
+            `${cbm} CBM (${cbm < 28 ? "20GP Container" : "40HQ Container"})`;
+        },
+
+        closeSpecModal() {
+          document.getElementById("spec-modal").classList.add("hidden");
+        },
+
+        submitTender(e) {
+          e.preventDefault();
+          const code = `ZTI-2026-T${Math.floor(1000 + Math.random() * 9000)}`;
+          this.toast(
+            `Official Tender ${code} Registered! Sign in to Client Portal to track.`,
+          );
+          this.openAuthModal("login");
+        },
+
+        startClock() {
+          setInterval(() => {
+            const now = new Date();
+            const bj = new Date(
+              now.toLocaleString("en-US", { timeZone: "Asia/Shanghai" }),
+            );
+            const clock = document.getElementById("beijing-clock");
+            if (clock)
+              clock.innerText = bj.toTimeString().split(" ")[0] + " CST";
+          }, 1000);
+        },
+
+        animateCounters() {
+          const observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const target = +entry.target.getAttribute("data-target");
+                  const sfx = entry.target.getAttribute("data-suffix") || "";
+                  let curr = 0;
+                  const step = Math.ceil(target / 35);
+                  const timer = setInterval(() => {
+                    curr += step;
+                    if (curr >= target) {
+                      entry.target.innerText = target.toLocaleString() + sfx;
+                      clearInterval(timer);
+                    } else {
+                      entry.target.innerText = curr.toLocaleString() + sfx;
+                    }
+                  }, 30);
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.3 },
+          );
+          document
+            .querySelectorAll(".counter-num")
+            .forEach((el) => observer.observe(el));
+        },
+
+        toast(msg) {
+          const container = document.getElementById("toast-container");
+          if (!container) return;
+          const el = document.createElement("div");
+          el.className =
+            "px-4 py-3 rounded-xl glass-card border border-zti-c6 text-zti-c6 text-xs font-mono shadow-2xl pointer-events-auto transition-all duration-300 transform translate-y-3 opacity-0 flex items-center space-x-2.5";
+          el.innerHTML = `<span class="w-2 h-2 rounded-full bg-zti-c5 animate-ping"></span><span>${msg}</span>`;
+          container.appendChild(el);
+          setTimeout(
+            () => el.classList.remove("translate-y-3", "opacity-0"),
+            20,
+          );
+          setTimeout(() => {
+            el.classList.add("opacity-0", "translate-y-3");
+            setTimeout(() => el.remove(), 350);
+          }, 3800);
+        },
+
+        toggleAi() {
+          document.getElementById("ai-chat-window")?.classList.toggle("hidden");
+        },
+
+        sendAi() {
+          const input = document.getElementById("ai-input");
+          const text = (input?.value || "").trim();
+          if (!text) return;
+          this.appendAiMsg("user", text);
+          input.value = "";
+          const lower = text.toLowerCase();
+          let reply =
+            "Our Ningbo & Dongguan engineering desk handles 01. Ordering (3D CLO), 02. Stitching (Juki Flatlock), 03. Packing (AQL 1.5), and 04. Shipping (FOB/DDP).";
+          if (lower.includes("moq"))
+            reply =
+              "Standard MOQ is 300–500 pcs per colorway for cut-and-sew sportswear, and 800 pcs for Santoni seamless compression.";
+          else if (lower.includes("cbm") || lower.includes("container"))
+            reply =
+              "A 20GP container holds 28 CBM (~24,000 T-shirts). A 40HQ holds 68 CBM (~58,000 T-shirts or ~22,000 hoodies).";
+          setTimeout(() => this.appendAiMsg("ai", reply), 350);
+        },
+
+        appendAiMsg(sender, text) {
+          const box = document.getElementById("ai-messages");
+          if (!box) return;
+          const d = document.createElement("div");
+          d.className = `p-3 rounded-2xl text-xs font-mono leading-relaxed ${sender === "user" ? "bg-zti-c5 text-zti-c1 font-bold ml-6 text-right" : "bg-zti-c1 text-zti-c6 border border-zti-c4 mr-6"}`;
+          d.innerText = text;
+          box.appendChild(d);
+          box.scrollTop = box.scrollHeight;
+        },
+      };
+
+      document.addEventListener("DOMContentLoaded", () => ZTi.init());
+    </script>
+  </body>
+</html>
